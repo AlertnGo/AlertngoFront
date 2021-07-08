@@ -1,0 +1,31 @@
+@import "../../assets/main.scss";
+
+.headerpc {
+  width: 60%;
+  padding: 2%;
+  background: $maincolor;
+  border-radius: 15px;
+  margin: 1% auto;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+
+  a {
+    display: block;
+    color: $black;
+    text-decoration: none;
+    @extend %fontCairo;
+    font-weight: 700;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

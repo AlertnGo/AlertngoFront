@@ -3,6 +3,8 @@ import "./style.scss";
 import Notification from "../../components/Notification";
 import { VoitureService } from "../../services";
 import { FormatAlignJustify } from "@material-ui/icons";
+import MessagesOptions from "../../components/MessagesOptions";
+
 
 const Home = (props) => {
   const [ndp, setNdp] = useState("");
@@ -52,6 +54,8 @@ const Home = (props) => {
           </button>
         </form>
       </section>
+
+      <MessagesOptions/>
     </main>
   );
 };
