@@ -10,8 +10,8 @@
     text-align: center;
     font-size: 5vh;
     text-transform: uppercase;
-    border:1px solid $maincolor;
-    background:$white;
+    border: 1px solid $maincolor;
+    background: $white;
     border-radius: 5px;
   }
 
@@ -19,11 +19,18 @@
   .mainbutton {
     width: 30%;
     height: auto;
-    font-size:3vh;
-    border:1px solid $maincolor;
-    background:$white;
+    font-size: 3vh;
+    border: 1px solid $white;
+    color: $white;
+    background: $maincolor;
     border-radius: 5px;
     cursor: pointer;
     float: right;
+
+    &:hover {
+      color: $maincolor;
+      background: $white;
+      border: 1px solid $maincolor;
+    }
   }
 }

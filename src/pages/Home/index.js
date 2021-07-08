@@ -41,6 +41,7 @@ const Home = (props) => {
               type="text"
               name="ndp"
               placeholder="AA555AA"
+              maxLength="10"
               onChange={(e) => {
                 setNdp(e.target.value);
               }}
