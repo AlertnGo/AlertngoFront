@@ -80,4 +80,11 @@ section{
 }
 
 
+@media only screen and (max-width: $firstbreakpoint) {
+  main {
+    width: 98%;
+    padding: 4%;
+  }
+}
+
 

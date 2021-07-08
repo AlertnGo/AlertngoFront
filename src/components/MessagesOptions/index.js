@@ -6,8 +6,11 @@ import "./style.scss";
 
 function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
+  const [mymessages, setMymessages] = useState("");
   const [error, setError] = useState("");
-  console.log(messages);
+
+  console.log(mymessages.message.message);
+
   useEffect(() => {
     const getMessages = async () => {
       try {
@@ -24,14 +27,24 @@ function MessagesOptions(props) {
     getMessages();
   }, []);
 
+  
   return (
     <section className="messagesection">
       {messages.map((message, index) => (
-        <div  className="message" key={index}>
-          <p>{message.message}</p>
-          <div className={message.class}></div>
+        <div className="message" key={index}>
+        <label onClick={() => {
+                setMymessages({message});
+              }}>
+          <input
+            type="radio"
+            className="message"
+            name="mess"
+          />
+          <p>{message.message}</p></label>
         </div>
       ))}
+
+  
     </section>
   );
 }

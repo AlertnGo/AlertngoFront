@@ -10,11 +10,7 @@ const Home = (props) => {
   const [ndp, setNdp] = useState("");
   const [userInfo, SetUserInfo] = useState("");
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    console.log("done");
-  }, []);
-
+  
   const getCar = async (event) => {
     event.preventDefault();
     try {

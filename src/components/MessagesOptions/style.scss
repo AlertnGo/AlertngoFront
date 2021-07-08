@@ -2,6 +2,8 @@
 
 .messagesection{
   .message{
+    text-align: left;
+    width: 100%;
     border: 2px solid $grey;
     margin: 1% auto;
     padding: 2%;
@@ -11,6 +13,10 @@
     flex-direction: column;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
+
+    input{
+      display: none;
+    }
 
     &:hover{
       border: 2px solid $maincolor;
@@ -30,6 +36,18 @@
       background:$good;
       height: 3vh;
       border-radius: 5px;
+    } 
+
+    :checked {
+      margin: 1% auto;
+      padding: 2%;
+      background:$maincolor;
+      color: $black;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
     }
   }
 }
