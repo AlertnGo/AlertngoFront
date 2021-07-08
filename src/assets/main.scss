@@ -1,49 +1,48 @@
-$maincolor: #f9df58;
-$lightmaincolor: #f9de582c;
+$maincolor: #61d9ff;
+$lightmaincolor: #f1fcff;
 $black: #000000;
 $white: #ffffff;
 $whitesmoke: #c8c8c8;
 $grey: #bbbbbb;
-$darkgrey: #777777;
-$menu-bgColor: #aec0a7;
+$darkgrey: #1f1f1f;
 $firstbreakpoint: 1024px;
+$danger: #ff9d9d;
+$good: #4cff48;
 
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-%fontMontserrat{
-    font-family: 'Montserrat', sans-serif;
+%fontCairo{
+    font-family: 'Cairo', sans-serif;
 }
 
-%fontPoppins{
-    font-family: 'Poppins', sans-serif;
-    font-weight: normal;
+%fontMulish {
+    font-family: 'Mulish', sans-serif;
 }
 
 h1 {
   font-size: 5vh;
+  @extend %fontCairo;
 }
 
 h2 {
-    
   font-size: 4vh;
+  @extend %fontCairo;
 }
 
 h3 {
   font-size: 3vh;
-  @extend %fontPoppins;
+  @extend %fontMulish;
 }
 
 h4 {
   font-size: 2.5vh;
-  @extend %fontPoppins;
+  @extend %fontMulish;
 }
 
 h5 {
   font-size: 2vh;
-  @extend %fontPoppins;
+  @extend %fontMulish;
 }
 
 p,
@@ -54,10 +53,10 @@ li,
 details,
 summary,
 input,
-label {
+label,button {
   line-height: 200%;
   font-size: 2vh;
-  @extend %fontMontserrat;
+  @extend %fontMulish;
 }
 
 h1,
@@ -68,3 +67,12 @@ span,
 p {
   margin: 0;
 }
+
+// style for main
+main{
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+

@@ -1,5 +1,29 @@
 @import "../../assets/main.scss";
 
-h1{
-    background-color: rgb(9, 33, 246);
+.mainform {
+  .searchBar {
+    width: 100%;
+    height: 10vh;
+    outline: none;
+    padding: 2%;
+    margin: 1% auto;
+    text-align: center;
+    font-size: 5vh;
+    text-transform: uppercase;
+    border:1px solid $maincolor;
+    background:$white;
+    border-radius: 5px;
+  }
+
+  //buttonstyles
+  .mainbutton {
+    width: 30%;
+    height: auto;
+    font-size:3vh;
+    border:1px solid $maincolor;
+    background:$white;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+  }
 }

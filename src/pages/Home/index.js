@@ -6,7 +6,7 @@ import { FormatAlignJustify } from "@material-ui/icons";
 
 const Home = (props) => {
   const [ndp, setNdp] = useState("");
-  const [userInfo,SetUserInfo] = useState("");
+  const [userInfo, SetUserInfo] = useState("");
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -16,37 +16,39 @@ const Home = (props) => {
   const getCar = async (event) => {
     event.preventDefault();
     try {
-        console.log("here    " + ndp);
-        const userData = await VoitureService.getByNdp(ndp);
-        const userDataNum = userData.data.data[0].telephone;
-        SetUserInfo(userDataNum);
-      } catch (error) {
-        if (error) {
-          console.log(error);
-          setError(error);
-        }
+      console.log("here    " + ndp);
+      const userData = await VoitureService.getByNdp(ndp);
+      const userDataNum = userData.data.data[0].telephone;
+      SetUserInfo(userDataNum);
+    } catch (error) {
+      if (error) {
+        console.log(error);
+        setError(error);
       }
-
+    }
   };
 
   return (
     <main>
       <h1>Home</h1>
       <section>
-        <form>
+        <form className="mainform">
           <label>
             Entrez le numéro de plaque d'immatriculation pour trouver et alerter
             le propriétaire
             <input
+              className="searchBar"
               type="text"
               name="ndp"
-              value={ndp}
+              placeholder="AA555AA"
               onChange={(e) => {
                 setNdp(e.target.value);
               }}
             />
           </label>
-          <button onClick={getCar}>Search</button>
+          <button className="mainbutton" onClick={getCar}>
+            Search
+          </button>
         </form>
       </section>
     </main>

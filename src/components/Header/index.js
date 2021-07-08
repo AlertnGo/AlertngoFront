@@ -8,7 +8,7 @@ import "./style.scss";
 function Header(props) {
   return (
     <header>
-      <div>
+      <div className="headerpc">
         <Link to="/">
           <div>
             <HomeOutlinedIcon />
