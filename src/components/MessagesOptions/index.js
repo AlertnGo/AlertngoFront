@@ -7,9 +7,8 @@ import "./style.scss";
 function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
-console.log(messages);
+  console.log(messages);
   useEffect(() => {
-
     const getMessages = async () => {
       try {
         const Messages = await messagesServices.getAll();
@@ -23,18 +22,17 @@ console.log(messages);
     };
 
     getMessages();
-    
   }, []);
 
-  
-
   return (
-
     <section className="messagesection">
-
-
+      {messages.map((message, index) => (
+        <div  className="message" key={index}>
+          <p>{message.message}</p>
+          <div className={message.class}></div>
+        </div>
+      ))}
     </section>
-  )
-  
+  );
 }
 export default MessagesOptions;
