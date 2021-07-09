@@ -14,26 +14,31 @@ import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 const Home = (props) => {
   const [ndp, setNdp] = useState("");
   const [userInfo, SetUserInfo] = useState("");
-  const [error, setError] = useState("");
+  const [bigerror, setBigError] = useState("");
   const [notif, setNotif] = useState(false);
 
   const getCar = async (event) => {
     event.preventDefault();
-    if (ndp == "") {
-      setNotif(true)
-    }
-    try {
-      const userData = await VoitureService.getByNdp(ndp);
-      const userDataNum = userData.data.data[0].telephone;
-      SetUserInfo(userDataNum);
-      localStorage.setItem("codeNum", userInfo);
-    } catch (error) {
-      if (error) {
-        console.log(error);
-        setError(error);
+    if (ndp === "") {
+      setNotif(true);
+    } else {
+      try {
+        const userData = await VoitureService.getByNdp(ndp);
+        const userDataNum = userData.data.data[0].telephone;
+        SetUserInfo(userDataNum);
+        localStorage.setItem("codeNum", userInfo);
+      } catch (error) {
+        if (error) {
+          console.log(error);
+          setBigError(error);
+        }
       }
     }
   };
+
+  const unset = async () => {
+    setNotif(false);
+  }
 
   return (
     <main>
@@ -59,16 +64,21 @@ const Home = (props) => {
             <SearchOutlinedIcon />
           </button>
         </form>
-        {notif ? <Notification notif="Veuillez saisir un numéro de plaque d'immatriculation" /> : null}
+        {notif ? (
+          <Notification
+            notif="Veuillez saisir un numéro de plaque d'immatriculation"
+            unsetfunction={unset}
+          />
+        ) : null}
       </section>
 
-      {userInfo == "" ? (
+      {!userInfo ? (
         <DefaultAnimation />
-      ) : userInfo != "" ? (
+      ) : userInfo ? (
         <MessagesOptions />
-      ) : (
+      ) : userInfo === bigerror ? (
         <NotFound />
-      )}
+      ) : null}
     </main>
   );
 };

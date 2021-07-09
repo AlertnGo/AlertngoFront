@@ -4,11 +4,30 @@
   width: auto;
   background: $lightmaincolor;
   margin: 1%;
-  text-align: center;
-  padding: 1% 5%;
+  padding: 0% 0% 0.2% 2%;
   border: 1px solid black;
-  border-left: 10px solid black;
+  border-left: 5px solid black;
   position: fixed;
   bottom: 0;
   left: 0;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+
+ 
+  
+  .close {
+    display: block;
+    color: $black;
+    margin: auto 0;
+    cursor: pointer;
+    padding: 1%;
+    font-size: 3vh;
+    width: 20%;
+    text-align: center;
+
+    &:hover{
+      color: $darkmaincolor;
+    }
+  }
 }
