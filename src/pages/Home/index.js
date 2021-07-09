@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import "./style.scss";
 import Notification from "../../components/Notification";
 import { VoitureService } from "../../services";
-import { FormatAlignJustify } from "@material-ui/icons";
-import MessagesOptions from "../../components/MessagesOptions";
 
+//components
+import MessagesOptions from "../../components/MessagesOptions";
+import DefaultAnimation from "../../components/DefaultAnimation";
 
 const Home = (props) => {
   const [ndp, setNdp] = useState("");
   const [userInfo, SetUserInfo] = useState("");
   const [error, setError] = useState("");
-  
+
   const getCar = async (event) => {
     event.preventDefault();
     try {
@@ -50,8 +51,8 @@ const Home = (props) => {
           </button>
         </form>
       </section>
-
-      <MessagesOptions/>
+      <DefaultAnimation />
+      <MessagesOptions />
     </main>
   );
 };

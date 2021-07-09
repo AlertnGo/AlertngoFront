@@ -1,0 +1,10 @@
+@import "../../assets/main.scss";
+
+.defaultAnimation {
+  width: 50%;
+  margin: 0% auto;
+  .animatedcar {
+    border-radius: 50%;
+    width: 100%;
+  }
+}
