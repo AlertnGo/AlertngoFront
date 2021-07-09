@@ -1,5 +1,4 @@
-import { withRouter, Link } from "react-router-dom";
-import React, { useState, useContext, useEffect } from "react";
+import {Link } from "react-router-dom";
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import FaceOutlinedIcon from '@material-ui/icons/FaceOutlined';
 import "./style.scss";

@@ -1,5 +1,4 @@
-import { withRouter, Link } from "react-router-dom";
-import React, { useState, useContext, useEffect } from "react";
+
 
 import "./style.scss";
 

@@ -4,7 +4,7 @@
   .message{
     text-align: left;
     width: 100%;
-    border: 2px solid $grey;
+    border: 2px solid $maincolor;
     margin: 1% auto;
     padding: 2%;
     background:$white;
@@ -19,7 +19,7 @@
     }
 
     &:hover{
-      border: 2px solid $maincolor;
+      border: 2px solid $darkmaincolor;
     }
 
     .danger{
