@@ -9,7 +9,7 @@ function MessagesOptions(props) {
   const [mymessages, setMymessages] = useState("");
   const [error, setError] = useState("");
 
-  console.log(mymessages.message.message);
+  // console.log(mymessages.message.message);
 
   useEffect(() => {
     const getMessages = async () => {
