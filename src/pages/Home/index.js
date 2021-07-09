@@ -9,20 +9,24 @@ import DefaultAnimation from "../../components/DefaultAnimation";
 import NotFound from "../../components/NotFound";
 
 //icons
-import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
+import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 
 const Home = (props) => {
   const [ndp, setNdp] = useState("");
   const [userInfo, SetUserInfo] = useState("");
   const [error, setError] = useState("");
+  const [notif, setNotif] = useState(false);
 
   const getCar = async (event) => {
     event.preventDefault();
+    if (ndp == "") {
+      setNotif(true)
+    }
     try {
-      console.log("here    " + ndp);
       const userData = await VoitureService.getByNdp(ndp);
       const userDataNum = userData.data.data[0].telephone;
       SetUserInfo(userDataNum);
+      localStorage.setItem("codeNum", userInfo);
     } catch (error) {
       if (error) {
         console.log(error);
@@ -43,7 +47,7 @@ const Home = (props) => {
               className="searchBar"
               type="text"
               name="ndp"
-              placeholder="AA555AA"
+              placeholder="AA000AA"
               maxLength="10"
               onChange={(e) => {
                 setNdp(e.target.value);
@@ -52,14 +56,19 @@ const Home = (props) => {
           </label>
           <button className="mainbutton" onClick={getCar}>
             <p>Search</p>
-            <SearchOutlinedIcon/>
+            <SearchOutlinedIcon />
           </button>
         </form>
+        {notif ? <Notification notif="Veuillez saisir un numéro de plaque d'immatriculation" /> : null}
       </section>
-      <DefaultAnimation />
-      <NotFound/>
-      <MessagesOptions/>
-      
+
+      {userInfo == "" ? (
+        <DefaultAnimation />
+      ) : userInfo != "" ? (
+        <MessagesOptions />
+      ) : (
+        <NotFound />
+      )}
     </main>
   );
 };

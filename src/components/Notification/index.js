@@ -1,11 +1,10 @@
-import { withRouter, Link } from "react-router-dom";
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.scss";
 
 function Notification(props) {
   return (
-    <p id="notification" className="notification">
-      dsdsdsdsd
+    <p className="notification">
+      {props.notif}
     </p>
   );
 }
