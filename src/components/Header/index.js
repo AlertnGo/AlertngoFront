@@ -16,7 +16,7 @@ function Header(props) {
         </Link>
 
         <Link to="/me">
-          <div className="navbutton">
+          <div className="navbutton2">
             <FaceOutlinedIcon />
             <p>Me</p>
           </div>

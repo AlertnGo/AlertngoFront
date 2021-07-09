@@ -6,6 +6,7 @@ import { VoitureService } from "../../services";
 //components
 import MessagesOptions from "../../components/MessagesOptions";
 import DefaultAnimation from "../../components/DefaultAnimation";
+import NotFound from "../../components/NotFound";
 
 const Home = (props) => {
   const [ndp, setNdp] = useState("");
@@ -51,6 +52,7 @@ const Home = (props) => {
           </button>
         </form>
       </section>
+      <NotFound/>
       <DefaultAnimation />
       <MessagesOptions />
     </main>

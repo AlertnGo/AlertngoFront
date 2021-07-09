@@ -1,0 +1,10 @@
+@import "../../assets/main.scss";
+
+.NotFound {
+  .redflag {
+    padding: 7% 2%; 
+    border: 3px solid $danger;
+    color: $darkmaincolor;
+    border-radius: 5px;
+  }
+}

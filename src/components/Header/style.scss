@@ -2,7 +2,7 @@
 
 .headerpc {
   width: 60%;
-  margin: 1% auto;
+  margin: 0.5% auto;
   height: auto;
   display: flex;
   justify-content: space-around;
@@ -15,8 +15,7 @@
     font-weight: 700;
     width: 100%;
     height: auto;
-    background: #000;
-    transition: 1s opacity ease-in-out;
+    
 
     &:hover div {
       color: $white;
@@ -25,13 +24,26 @@
 
     .navbutton {
       background:$maincolor;
-      padding: 2%;
+      padding: 2% 1% 0.5% 1%;
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-     
+      border-radius: 15px 0px 0px 15px;
+      transition: 0.2s all ease-in-out;
+    }
+
+    .navbutton2{
+      transition:0.2s all ease-in-out;
+      border-radius:0px  15px  15px 0px;
+      background:$maincolor;
+      padding: 2% 1% 0.5% 1%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
