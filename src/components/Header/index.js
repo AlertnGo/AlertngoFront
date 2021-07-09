@@ -9,14 +9,14 @@ function Header(props) {
     <header>
       <div className="headerpc">
         <Link to="/">
-          <div className="navbutton">
+          <div className="navbutton borderleft">
             <HomeOutlinedIcon />
             <p>Home</p>
           </div>
         </Link>
 
         <Link to="/me">
-          <div className="navbutton2">
+          <div className="navbutton borderright">
             <FaceOutlinedIcon />
             <p>Me</p>
           </div>

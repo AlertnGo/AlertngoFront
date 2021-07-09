@@ -23,28 +23,13 @@ $good: #4cff48;
 }
 
 h1 {
-  font-size: 5vh;
-  @extend %fontCairo;
-}
-
-h2 {
   font-size: 4vh;
   @extend %fontCairo;
 }
 
-h3 {
+h2 {
   font-size: 3vh;
-  @extend %fontMulish;
-}
-
-h4 {
-  font-size: 2.5vh;
-  @extend %fontMulish;
-}
-
-h5 {
-  font-size: 2vh;
-  @extend %fontMulish;
+  @extend %fontCairo;
 }
 
 p,
@@ -67,7 +52,7 @@ h4,
 h5,
 span,
 p {
-  margin: 0;
+  margin: 0%;
 }
 
 // style for main
@@ -77,7 +62,7 @@ main{
 }
 
 section{
-  margin: 2% auto;
+  margin: 1% auto;
 }
 
   //buttonstyles
