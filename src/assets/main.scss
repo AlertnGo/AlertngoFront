@@ -82,7 +82,10 @@ section{
 
   //buttonstyles
   .mainbutton {
-    width:40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     height: auto;
     font-size: 3vh;
     border: 1px solid $white;
@@ -90,10 +93,15 @@ section{
     background: $maincolor;
     border-radius: 5px;
     cursor: pointer;
-    padding: 0.2% 2%;
+    padding: 1% 5%;
+    margin: 1% 0% 0% auto;
+
+    p{
+      margin: 0% 10%;
+    }
 
     &:hover {
-      color: $maincolor;
+      color: $white;
       background: $darkmaincolor;
       border: 1px solid $white;
     }

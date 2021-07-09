@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { messagesServices } from "../../services";
-
 import "./style.scss";
+
+//icons
+import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 
 function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
@@ -40,7 +42,10 @@ function MessagesOptions(props) {
           </label>
         </div>
       ))}
-      <button className="mainbutton">Send</button>
+      <button className="mainbutton">
+        <p>Send</p>
+        <SendOutlinedIcon />
+      </button>
     </section>
   );
 }

@@ -8,6 +8,9 @@ import MessagesOptions from "../../components/MessagesOptions";
 import DefaultAnimation from "../../components/DefaultAnimation";
 import NotFound from "../../components/NotFound";
 
+//icons
+import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
+
 const Home = (props) => {
   const [ndp, setNdp] = useState("");
   const [userInfo, SetUserInfo] = useState("");
@@ -48,13 +51,15 @@ const Home = (props) => {
             />
           </label>
           <button className="mainbutton" onClick={getCar}>
-            Search
+            <p>Search</p>
+            <SearchOutlinedIcon/>
           </button>
         </form>
       </section>
-      <NotFound/>
       <DefaultAnimation />
-      <MessagesOptions />
+      <NotFound/>
+      <MessagesOptions/>
+      
     </main>
   );
 };
