@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
 
+//icons
+import EditRoundedIcon from '@material-ui/icons/EditRounded';
+
 function MyProfile(props) {
-  const [messages, setMessages] = useState([]);
-  const [mymessages, setMymessages] = useState("");
+  const [myinfo, setMyinfo] = useState([]);
   const [error, setError] = useState("");
+
 
   // useEffect(() => {
 
@@ -17,11 +20,17 @@ function MyProfile(props) {
         <div className="infos">
           <div className="infodiv">
             <h2>Vishnu Gopy</h2>
-            <button>edit</button>
+            <button className="button">
+              <p>Modifier</p>
+              <EditRoundedIcon/>
+            </button>
           </div>
           <div className="infodiv">
             <h2>077655432</h2>
-            <button>edit</button>
+            <button className="button">
+              <p>Modifier</p>
+              <EditRoundedIcon/>
+            </button>
           </div>
         </div>
       </section>
@@ -31,7 +40,10 @@ function MyProfile(props) {
         <div className="infos">
           <div className="infodiv">
             <h2>Mode Sombre</h2>
-            <button>toggle</button>
+            <button className="button">
+              <p>Suprimer</p>
+              <EditRoundedIcon/>
+            </button>
           </div>
         </div>
       </section>
@@ -41,13 +53,23 @@ function MyProfile(props) {
         <div className="infos">
           <div className="infodiv">
             <h2>ch 678 GT</h2>
-            <button>delete</button>
-            <button>edit</button>
+            <button className="button">
+              <p>Suprimer</p>
+              <EditRoundedIcon/>
+            </button>
+            <button className="button">
+              <p>Modifier</p>
+              <EditRoundedIcon/>
+            </button>
           </div>
         </div>
-        <button>add</button>
+        <button className="button">
+              <p>Ajouter un voiture</p>
+              <EditRoundedIcon/>
+            </button>
+       
       </section>
-
+    
     </section>
   );
 }
