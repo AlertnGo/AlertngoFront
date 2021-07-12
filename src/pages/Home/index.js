@@ -75,5 +75,4 @@ console.log(userInfo);
     </main>
   );
 };
-
 export default Home;
