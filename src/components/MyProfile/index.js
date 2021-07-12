@@ -54,7 +54,8 @@ function MyProfile(props) {
         <h3>Mes Vehicles</h3>
         <div className="infos">
           <div className="infodiv">
-            <h2>ch 678 GT</h2>
+            <h2 className="ndplate">ch 678 GT</h2>
+            <div className="buttonset">
             <button className="button">
               <DeleteRoundedIcon />
               <p>Suprimer</p>
@@ -62,7 +63,7 @@ function MyProfile(props) {
             <button className="button">
               <EditRoundedIcon />
               <p>Modifier</p>
-            </button>
+            </button></div>
           </div>
         </div>
         <button className="button super">
