@@ -6,7 +6,7 @@ import MyProfile from "../../components/MyProfile";
 const Me = (props) => {
   return (
     <main>
-      <h1>About Me</h1>
+      <h1>À propos de moi</h1>
       <section className="me">
         <MyProfile />
       </section>

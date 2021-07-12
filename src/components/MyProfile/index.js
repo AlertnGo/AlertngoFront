@@ -12,33 +12,32 @@ function MyProfile(props) {
 
   return (
     <section className="myprofile">
-      <section className="namesection">
+      <section className="devider">
         <h3>Mes Informations</h3>
         <div className="infos">
           <div className="infodiv">
             <h2>Vishnu Gopy</h2>
-            <button>x</button>
+            <button>edit</button>
           </div>
           <div className="infodiv">
             <h2>077655432</h2>
-            <button>x</button>
+            <button>edit</button>
           </div>
         </div>
       </section>
 
-      <section className="namesection">
+      <section className="devider">
         <h3>Theme</h3>
         <div className="infos">
           <div className="infodiv">
             <h2>Mode Sombre</h2>
-            <button>x</button>
+            <button>toggle</button>
           </div>
         </div>
       </section>
 
-      <section className="namesection">
+      <section className="devider">
         <h3>Mes Vehicles</h3>
-        <button>add</button>
         <div className="infos">
           <div className="infodiv">
             <h2>ch 678 GT</h2>
@@ -46,6 +45,7 @@ function MyProfile(props) {
             <button>edit</button>
           </div>
         </div>
+        <button>add</button>
       </section>
 
     </section>

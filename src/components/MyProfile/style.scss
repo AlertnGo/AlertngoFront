@@ -1,5 +1,21 @@
 @import "../../assets/main.scss";
 
 .myprofile{
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .devider{
+    width: 48%;
+    margin: 0%;
+    .infos{
+      .infodiv{
+        margin: 1% 0%;
+       
+      }
+    }
+  }
+
+  .devider:nth-child(3){
+    width: 100%;
+  }
 }

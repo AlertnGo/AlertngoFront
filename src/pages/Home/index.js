@@ -42,7 +42,7 @@ console.log(userInfo);
 
   return (
     <main>
-      <h1>Home</h1>
+      <h1>ACCUEIL</h1>
       <section>
         <form className="mainform">
           <label>
@@ -60,7 +60,7 @@ console.log(userInfo);
             />
           </label>
           <button className="mainbutton" onClick={getCar}>
-            <p>Search</p>
+            <p>Rechercher</p>
             <SearchOutlinedIcon />
           </button>
         </form>
