@@ -14,14 +14,21 @@
   height:300px;
   // border:red 1px solid;
   .path{
-    fill:$maincolor;
+    fill:$white;
     stroke:$darkmaincolor;
-    stroke-width:10;
+    stroke-width:5px;
     stroke-linecap:round;
     stroke-linejoin:bevel;
     stroke-dasharray: 3500;
     stroke-dashoffset: 3500;
-    animation: dash 10s infinite forwards;
+    animation: dash 5s infinite backwards;
+  }
+
+  .car{
+    fill:$white;
+    stroke:$darkmaincolor;
+    stroke-width:5px;
+    animation: speed 1s infinite ease-in-out;
   }
 }
 
@@ -31,3 +38,15 @@
     stroke-dashoffset: 0;
   }
 }
+
+
+@keyframes speed {
+  from{
+    transform: translateY(3px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+
