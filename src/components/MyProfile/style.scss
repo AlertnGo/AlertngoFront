@@ -5,35 +5,32 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   .devider{
-    width: 48%;
-    margin: 0% 2% 0% 0%;
+    width: 100%;
+    margin: 5% 2% 0% 0%;
     .infos{
       .infodiv{
         margin: 1% 0%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-
-        
+        padding: 1%;
+        border-radius: 5px;
+        background: rgba(187, 185, 185, 0.089);
       }
     }
-  }
-
-  .devider:nth-child(3){
-    width: 100%;
   }
 
   .button{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border: none;
     color: $white;
     background: $darkgrey;
     border-radius: 5px;
     cursor: pointer;
-    padding: 1% 5%;
+    padding: 1% 3%;
 
 
     &:hover {
@@ -41,5 +38,10 @@
       background: $darkmaincolor;
 
     }
+  }
+
+  .super{
+    background:$darkgrey;
+    margin: 8%  0% 0% auto;
   }
 }

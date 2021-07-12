@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./style.scss";
 
 //icons
-import EditRoundedIcon from '@material-ui/icons/EditRounded';
+import EditRoundedIcon from "@material-ui/icons/EditRounded";
+import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
+import AddBoxRoundedIcon from "@material-ui/icons/AddBoxRounded";
+import ToggleOffRoundedIcon from '@material-ui/icons/ToggleOffRounded';
 
 function MyProfile(props) {
   const [myinfo, setMyinfo] = useState([]);
   const [error, setError] = useState("");
-
 
   // useEffect(() => {
 
@@ -21,15 +23,15 @@ function MyProfile(props) {
           <div className="infodiv">
             <h2>Vishnu Gopy</h2>
             <button className="button">
+              <EditRoundedIcon />
               <p>Modifier</p>
-              <EditRoundedIcon/>
             </button>
           </div>
           <div className="infodiv">
             <h2>077655432</h2>
             <button className="button">
+              <EditRoundedIcon />
               <p>Modifier</p>
-              <EditRoundedIcon/>
             </button>
           </div>
         </div>
@@ -41,8 +43,8 @@ function MyProfile(props) {
           <div className="infodiv">
             <h2>Mode Sombre</h2>
             <button className="button">
-              <p>Suprimer</p>
-              <EditRoundedIcon/>
+              <ToggleOffRoundedIcon />
+              <p>Toggle</p>
             </button>
           </div>
         </div>
@@ -54,22 +56,20 @@ function MyProfile(props) {
           <div className="infodiv">
             <h2>ch 678 GT</h2>
             <button className="button">
+              <DeleteRoundedIcon />
               <p>Suprimer</p>
-              <EditRoundedIcon/>
             </button>
             <button className="button">
+              <EditRoundedIcon />
               <p>Modifier</p>
-              <EditRoundedIcon/>
             </button>
           </div>
         </div>
-        <button className="button">
-              <p>Ajouter un voiture</p>
-              <EditRoundedIcon/>
-            </button>
-       
+        <button className="button super">
+          <AddBoxRoundedIcon />
+          <p>Ajouter un voiture</p>
+        </button>
       </section>
-    
     </section>
   );
 }
