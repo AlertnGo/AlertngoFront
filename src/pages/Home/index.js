@@ -16,7 +16,7 @@ const Home = (props) => {
   const [userInfo, SetUserInfo] = useState("");
   const [bigerror, setBigError] = useState("");
   const [notif, setNotif] = useState(false);
-
+console.log(userInfo);
   const getCar = async (event) => {
     event.preventDefault();
     if (ndp === "") {
@@ -24,7 +24,7 @@ const Home = (props) => {
     } else {
       try {
         const userData = await VoitureService.getByNdp(ndp);
-        const userDataNum = userData.data.data[0].telephone;
+        const userDataNum = userData.data.data[0];
         SetUserInfo(userDataNum);
         localStorage.setItem("codeNum", userInfo);
       } catch (error) {
@@ -71,14 +71,7 @@ const Home = (props) => {
           />
         ) : null}
       </section>
-
-      {!userInfo ? (
-        <DefaultAnimation />
-      ) : userInfo ? (
-        <MessagesOptions />
-      ) : userInfo === bigerror ? (
-        <NotFound />
-      ) : null}
+      {userInfo ? <MessagesOptions /> : userInfo == undefined ? <NotFound /> :   <DefaultAnimation />}
     </main>
   );
 };
