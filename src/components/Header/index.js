@@ -1,6 +1,6 @@
 import {Link } from "react-router-dom";
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import FaceOutlinedIcon from '@material-ui/icons/FaceOutlined';
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import FaceRoundedIcon from '@material-ui/icons/FaceRounded';
 import "./style.scss";
 
 
@@ -10,14 +10,14 @@ function Header(props) {
       <div className="headerpc">
         <Link to="/">
           <div className="navbutton borderleft">
-            <HomeOutlinedIcon />
+            <HomeRoundedIcon />
             <p>ACCUEIL</p>
           </div>
         </Link>
 
         <Link to="/me">
           <div className="navbutton borderright">
-            <FaceOutlinedIcon />
+            <FaceRoundedIcon />
             <p>Moi</p>
           </div>
         </Link>

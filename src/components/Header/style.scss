@@ -15,6 +15,7 @@
     font-weight: 700;
     width: 100%;
     height: auto;
+    
 
     
 
@@ -32,17 +33,22 @@
       align-items: center;
       justify-content: center;
       transition: 0.2s all ease-in-out;
-
+      
       p{
         margin: 0% 2%;
       }
     }
-
+    
     .borderleft{
+      border: 2px solid $darkmaincolor;
+      border-right: none;
       border-radius: 15px 0px 0px 15px;
+      
     }
 
     .borderright{
+      border: 2px solid $darkmaincolor;
+      border-left: none;
       border-radius: 0px 15px  15px 0px;
     }
   }

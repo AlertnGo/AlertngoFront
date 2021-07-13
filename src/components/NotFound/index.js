@@ -8,6 +8,11 @@ function NotFound(props) {
         recherché n'est pas enregistré sur AlernGo. Nous sommes vraiment désolés
         pour ce dérangement.
       </p>
+      <p className="redflag">
+        Vous pouvez chercher un notre ndp quand vous voulez.  
+      </p>
+
+     
     </section>
   );
 }

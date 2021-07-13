@@ -24,7 +24,9 @@ $good: #4cff48;
 
 h1 {
   font-size: 4vh;
+  font-weight: 500;
   @extend %fontCairo;
+  margin: 3% 0%;
 }
 
 h2 {
@@ -41,12 +43,13 @@ details,
 summary,
 input,
 label,button {
+  font-weight: 600;
   line-height: 200%;
   font-size: 2vh;
   @extend %fontMulish;
 }
 
-h1,
+
 h3,
 h4,
 h5,
@@ -73,8 +76,8 @@ section{
     justify-content: center;
     height: auto;
     font-size: 3vh;
-    border: 1px solid $white;
-    color: $white;
+    border: 2px solid $darkmaincolor;
+    color: $darkmaincolor;
     background: $maincolor;
     border-radius: 5px;
     cursor: pointer;
@@ -88,7 +91,7 @@ section{
     &:hover {
       color: $white;
       background: $darkmaincolor;
-      border: 1px solid $white;
+      border: 2px solid $black;
     }
   }
 

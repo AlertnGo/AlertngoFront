@@ -52,8 +52,9 @@ function MyProfile(props) {
 
       <section className="devider">
         <h3>Mes Vehicles</h3>
-        <div className="infos">
-          <div className="infodiv">
+        <div className="ndpdivider">
+
+          <div className="ndpdiv">
             <h2 className="ndplate">ch 678 GT</h2>
             <div className="buttonset">
             <button className="button">
@@ -65,6 +66,35 @@ function MyProfile(props) {
               <p>Modifier</p>
             </button></div>
           </div>
+
+
+          <div className="ndpdiv">
+            <h2 className="ndplate">ch 678 GT</h2>
+            <div className="buttonset">
+            <button className="button">
+              <DeleteRoundedIcon />
+              <p>Suprimer</p>
+            </button>
+            <button className="button">
+              <EditRoundedIcon />
+              <p>Modifier</p>
+            </button></div>
+          </div>
+
+
+          <div className="ndpdiv">
+            <h2 className="ndplate">ch 678 GT</h2>
+            <div className="buttonset">
+            <button className="button">
+              <DeleteRoundedIcon />
+              <p>Suprimer</p>
+            </button>
+            <button className="button">
+              <EditRoundedIcon />
+              <p>Modifier</p>
+            </button></div>
+          </div>
+
         </div>
         <button className="button super">
           <AddBoxRoundedIcon />
