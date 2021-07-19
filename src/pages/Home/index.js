@@ -53,7 +53,7 @@ console.log(userInfo);
               type="text"
               name="ndp"
               placeholder="AA000AA"
-              maxLength="10"
+              maxLength="07"
               onChange={(e) => {
                 setNdp(e.target.value);
               }}
