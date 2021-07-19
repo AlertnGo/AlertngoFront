@@ -42,7 +42,7 @@ console.log(userInfo);
 
   return (
     <main>
-      <h1>ACCUEIL</h1>
+      <h1>Accueil</h1>
       <section>
         <form className="mainform">
           <label>

@@ -10,28 +10,26 @@ $firstbreakpoint: 1024px;
 $danger: #ff9d9d;
 $good: #4cff48;
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-%fontCairo{
-    font-family: 'Cairo', sans-serif;
-    font-weight: 300;
+%fontExo {
+  font-family: "Exo", sans-serif;
 }
-
-%fontMulish {
-    font-family: 'Mulish', sans-serif;
+%fontMonts {
+  font-family: "Exo", sans-serif;
 }
 
 h1 {
   font-size: 4vh;
-  font-weight: 500;
-  @extend %fontCairo;
+  font-weight: 600;
+  @extend %fontExo;
   margin: 3% 0%;
 }
 
 h2 {
   font-size: 3vh;
-  @extend %fontCairo;
+  @extend %fontMonts;
 }
 
 p,
@@ -42,13 +40,13 @@ li,
 details,
 summary,
 input,
-label,button {
-  font-weight: 600;
+label,
+button {
+  
   line-height: 200%;
   font-size: 2vh;
-  @extend %fontMulish;
+  @extend %fontMonts;
 }
-
 
 h3,
 h4,
@@ -59,42 +57,41 @@ p {
 }
 
 // style for main
-main{
-    width: 60%;
-    margin: 4% auto;
+main {
+  width: 60%;
+  margin: 4% auto;
 }
 
-section{
+section {
   margin: 1% auto;
 }
 
-  //buttonstyles
-  .mainbutton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    font-size: 3vh;
-    border: 2px solid $darkmaincolor;
-    color: $darkmaincolor;
-    background: $maincolor;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 1% 5%;
-    margin: 1% 0% 0% auto;
+//buttonstyles
+.mainbutton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  font-size: 3vh;
+  border: 2px solid $darkmaincolor;
+  color: $darkmaincolor;
+  background: $maincolor;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 1% 5%;
+  margin: 1% 0% 0% auto;
 
-    p{
-      margin: 0% 10%;
-    }
-
-    &:hover {
-      color: $white;
-      background: $darkmaincolor;
-      border: 2px solid $black;
-    }
+  p {
+    margin: 0% 10%;
   }
 
+  &:hover {
+    color: $white;
+    background: $darkmaincolor;
+    border: 2px solid $black;
+  }
+}
 
 @media only screen and (max-width: $firstbreakpoint) {
   main {
@@ -102,5 +99,3 @@ section{
     padding: 4%;
   }
 }
-
-
