@@ -6,13 +6,14 @@
   justify-content: flex-start;
   .devider {
     width: 100%;
-    margin: 5% 2% 0% 0%;
+    margin: 8% 2% 0% 0%;
     .infos {
       .infodiv {
         margin: 1% 0%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
         padding: 1%;
         border-radius: 5px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.164);
@@ -25,17 +26,16 @@
     flex-wrap: row;
     flex-wrap: wrap;
     .ndpdiv {
-      margin: 2% 1%;
+      margin: 2% 5%;
       flex: 1;
-      gap: 10px;
 
       .ndplate {
         text-align: center;
         text-transform: uppercase;
-        font-weight: 500;
+        font-weight: 400;
         background-color: $white;
         border-radius: 5px;
-        padding: 0% 2%;
+        padding: 2% 4%;
         border-left: $darkmaincolor 20px solid;
         border-right: $darkmaincolor 20px solid;
         border-top: $darkmaincolor 2px solid;
@@ -57,20 +57,21 @@
     align-items: center;
     justify-content: space-between;
     border: none;
-    color: $white;
-    background: $darkgrey;
+    color: $black;
+    background: $white;
     border-radius: 5px;
     cursor: pointer;
     padding: 1% 3%;
-
+    border: 2px solid $white;
+    
     &:hover {
-      color: $white;
-      background: $darkmaincolor;
+      border: 2px solid $black;
     }
   }
 
   .super {
-    background: $darkgrey;
+    background: $darkmaincolor;
+    color: $white;
     margin: 8% 0% 0% auto;
   }
 }

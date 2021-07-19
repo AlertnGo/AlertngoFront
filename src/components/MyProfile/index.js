@@ -55,7 +55,7 @@ function MyProfile(props) {
         <div className="ndpdivider">
 
           <div className="ndpdiv">
-            <h2 className="ndplate">ch 678 GT</h2>
+            <p className="ndplate">ch 678 GT</p>
             <div className="buttonset">
             <button className="button">
               <DeleteRoundedIcon />
@@ -69,7 +69,7 @@ function MyProfile(props) {
 
 
           <div className="ndpdiv">
-            <h2 className="ndplate">ch 678 GT</h2>
+            <p className="ndplate">ch 678 GT</p>
             <div className="buttonset">
             <button className="button">
               <DeleteRoundedIcon />
@@ -83,7 +83,7 @@ function MyProfile(props) {
 
 
           <div className="ndpdiv">
-            <h2 className="ndplate">ch 678 GT</h2>
+            <p className="ndplate">ch 678 GT</p>
             <div className="buttonset">
             <button className="button">
               <DeleteRoundedIcon />

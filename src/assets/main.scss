@@ -33,6 +33,12 @@ h2 {
   @extend %fontMonts;
 }
 
+h3{
+  font-size: 2.7vh;
+  font-weight: 700;
+  @extend %fontMonts;
+}
+
 p,
 span,
 a,
