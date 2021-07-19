@@ -6,6 +6,7 @@ import EditRoundedIcon from "@material-ui/icons/EditRounded";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import AddBoxRoundedIcon from "@material-ui/icons/AddBoxRounded";
 import ToggleOffRoundedIcon from '@material-ui/icons/ToggleOffRounded';
+import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 
 
 function MyProfile(props) {
@@ -35,7 +36,12 @@ function MyProfile(props) {
               <p>Modifier</p>
             </button>
           </div>
+          <button className="button super">
+          <ExitToAppRoundedIcon />
+          <p>Déconnecter</p>
+        </button>
         </div>
+        
       </section>
 
       <section className="devider">
