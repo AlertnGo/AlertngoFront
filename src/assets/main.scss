@@ -1,5 +1,6 @@
-$maincolor: #61d9ff;
-$darkmaincolor: #194259;
+
+$maincolor: #00ffff78;
+$darkmaincolor: #2070CA;
 $lightmaincolor: #f1fcff;
 $black: #000000;
 $white: #ffffff;
@@ -9,6 +10,10 @@ $darkgrey: #1f1f1f;
 $firstbreakpoint: 1024px;
 $danger: #ff9d9d;
 $good: #4cff48;
+
+
+
+
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -37,6 +42,11 @@ h3{
   font-size: 2.7vh;
   font-weight: 700;
   @extend %fontMonts;
+  color:$darkmaincolor;
+  border-bottom: 3px solid $darkmaincolor;
+  margin: 3% 0% 3% 0%;
+  width: max-content;
+  padding: 0.5% 0%;
 }
 
 p,
@@ -66,7 +76,7 @@ p {
 // style for main
 main {
   width: 60%;
-  margin: 4% auto;
+  margin: 6% auto;
 }
 
 section {
@@ -81,13 +91,14 @@ section {
   justify-content: center;
   height: auto;
   font-size: 3vh;
-  border: 2px solid $darkmaincolor;
+  border: none;
   color: $darkmaincolor;
-  background: $maincolor;
+  background: $white;
   border-radius: 5px;
   cursor: pointer;
   padding: 1% 5%;
   margin: 1% 0% 0% auto;
+  border: 1.5px solid $darkmaincolor;
 
   p {
     margin: 0% 10%;
@@ -96,7 +107,6 @@ section {
   &:hover {
     color: $white;
     background: $darkmaincolor;
-    border: 2px solid $black;
   }
 }
 

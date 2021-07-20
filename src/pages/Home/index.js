@@ -42,7 +42,6 @@ console.log(userInfo);
 
   return (
     <main>
-      <h1>Accueil</h1>
       <section>
         <form className="mainform">
           <label>

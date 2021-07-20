@@ -1,7 +1,7 @@
 @import "../../assets/main.scss";
 
 .defaultAnimation {
-  width: 100%;
+  width: 80%;
   margin: 0% auto;
   .animatedcar {
     border-radius: 50%;
@@ -27,8 +27,8 @@
   .car{
     stroke-linecap:round;
     stroke-linejoin:bevel;
-    fill:$darkmaincolor;
-    stroke:$maincolor;
+    fill:$white;
+    stroke:$darkmaincolor;
     stroke-width:5px;
     animation: speed 1s infinite ease-in-out;
   }

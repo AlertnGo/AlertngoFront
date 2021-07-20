@@ -9,7 +9,6 @@
 
   a {
     display: block;
-    color: $black;
     text-decoration: none;
     @extend %fontExo;
     font-weight: 700;
@@ -25,7 +24,7 @@
     }
 
     .navbutton {
-      background:$maincolor;
+      background:$white;
       padding: 3% 5%;
       width: 100%;
       display: flex;
@@ -33,6 +32,8 @@
       align-items: center;
       justify-content: center;
       transition: 0.2s all ease-in-out;
+      color: $darkmaincolor;
+      font-size: 2.5em;
       
       p{
         text-transform: uppercase;
@@ -48,7 +49,7 @@
     }
 
     .borderright{
-      border: 2px solid $darkmaincolor;
+     border: 2px solid $darkmaincolor;
       border-left: none;
       border-radius: 0px 15px  15px 0px;
     }

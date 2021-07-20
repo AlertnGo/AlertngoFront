@@ -40,7 +40,7 @@ function Signup(props) {
        </label>
        <label>
          <p>Numero de telephone</p>
-         <input type="phone" name="telephone" placeholder="Telephone" maxlength="13" required />
+         <input type="phone" name="telephone" placeholder="Telephone" maxLength="13" required />
        </label>
        <button className="button">Login</button>
        <p>Veuillez remplir correctement les champs ci-dessus pour vous inscrire. Si vous êtes déjà inscrit, veuillez vous connecter en cliquant sur le lien ci-dessous.</p>

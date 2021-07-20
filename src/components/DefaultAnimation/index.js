@@ -25,10 +25,10 @@ function DefaultAnimation(props) {
 
        
 
-        <polyline className="path" points="10,280 100,270 400,280 500,270" />
+        <polyline className="path" points="10,280 100,270 400,280 500,280" />
         <polyline
           className="path"
-          points="400,260 500,250 600,240 700,230 800,250"
+          points="400,260 500,250 600,240 700,230 900,250"
         />
 
         <polyline className="car" points="100,230 140,230" />

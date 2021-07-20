@@ -24,11 +24,11 @@ function Login(props) {
       <form className="fillform">
        <label>
          <p>Email*</p>
-         <input type="text" name="email" placeholder="Email" required />
+         <input type="text" name="email" placeholder="Email" autoComplete="email" required />
        </label>
        <label>
          <p>Mot de Pass*</p>
-         <input type="password" name="passsword" placeholder="Motdepass" required />
+         <input type="password" name="passsword" placeholder="Motdepass" autoComplete="current-password" required />
        </label>
        <button className="button">Login</button>
        <p>Veuillez saisir votre login et mot de passe ou si vous n'avez pas de compte, vous pouvez en créer un en cliquant sur le lien ci-dessous</p>
