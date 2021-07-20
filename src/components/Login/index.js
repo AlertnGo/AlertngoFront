@@ -30,7 +30,7 @@ function Login(props) {
          <p>Mot de Pass*</p>
          <input type="password" name="passsword" placeholder="Motdepass" autoComplete="current-password" required />
        </label>
-       <button className="button">Login</button>
+       <button className="submitbutton">Login</button>
        <p>Veuillez saisir votre login et mot de passe ou si vous n'avez pas de compte, vous pouvez en créer un en cliquant sur le lien ci-dessous</p>
        <Link to="/me/signup" className="linkbuttons">Créer un compte</Link>
       </form>

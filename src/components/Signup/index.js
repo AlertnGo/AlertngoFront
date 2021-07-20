@@ -42,7 +42,7 @@ function Signup(props) {
          <p>Numero de telephone</p>
          <input type="phone" name="telephone" placeholder="Telephone" maxLength="13" required />
        </label>
-       <button className="button">Login</button>
+       <button className="submitbutton">Login</button>
        <p>Veuillez remplir correctement les champs ci-dessus pour vous inscrire. Si vous êtes déjà inscrit, veuillez vous connecter en cliquant sur le lien ci-dessous.</p>
        <Link to="/me/login" className="linkbuttons">Me connecter</Link>
       </form>

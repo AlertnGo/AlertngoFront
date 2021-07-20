@@ -5,8 +5,8 @@ import "./style.scss";
 import EditRoundedIcon from "@material-ui/icons/EditRounded";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import AddBoxRoundedIcon from "@material-ui/icons/AddBoxRounded";
-import ToggleOffRoundedIcon from '@material-ui/icons/ToggleOffRounded';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
+import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
 
 
 function MyProfile(props) {
@@ -50,7 +50,7 @@ function MyProfile(props) {
           <div className="infodiv">
             <h2>Mode Sombre</h2>
             <button className="button">
-              <ToggleOffRoundedIcon />
+              <Brightness4RoundedIcon />
               <p>Toggle</p>
             </button>
           </div>
