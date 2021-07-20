@@ -30,7 +30,7 @@
     fill:$white;
     stroke:$darkmaincolor;
     stroke-width:5px;
-    animation: speed 1s infinite ease-in-out;
+    animation: speed 1s infinite cubic-bezier(.17,.67,.83,.67);
   }
 
   .smoke{
@@ -48,14 +48,14 @@
   }
 
   .red{
-    fill:red;
+    fill:#F38BA0;
   }
 
   .green{
-    fill:green;
+    fill:#66DE93;
   }
   .yellow{
-    fill:yellow;
+    fill:#FFEAC9;
   }
 }
 
@@ -72,14 +72,14 @@
     transform: translateY(3px);
   }
   to {
-    transform: translateY(0px);
+    transform: translateY(-3px);
   }
 }
 
 @keyframes smoky {
   from{
     opacity: 0.2;
-    transform: translateY(3px);
+    transform: translateY(5px);
   }
   to {
     opacity: 1;

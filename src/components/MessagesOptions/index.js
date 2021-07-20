@@ -3,7 +3,7 @@ import { messagesServices } from "../../services";
 import "./style.scss";
 
 //icons
-import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
+import SendRoundedIcon from '@material-ui/icons/SendRounded';
 
 function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
@@ -15,6 +15,7 @@ function MessagesOptions(props) {
       try {
         const Messages = await messagesServices.getAll();
         setMessages(Messages.data.data);
+        console.log(Messages);
       } catch (error) {
         if (error) {
           console.log(error);
@@ -39,12 +40,13 @@ function MessagesOptions(props) {
           <label>
             <input type="radio" className="message" name="mess" />
             <p>{message.message}</p>
+            <div className={message.type}></div>
           </label>
         </div>
       ))}
       <button className="mainbutton">
         <p>Send</p>
-        <SendOutlinedIcon />
+        <SendRoundedIcon />
       </button>
     </section>
   );
