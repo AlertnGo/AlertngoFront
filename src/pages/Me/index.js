@@ -9,9 +9,9 @@ import Notification from "../../components/Notification";
 const Me = (props) => {
   return (
     <main>
-      {/* <Login /> */}
+     <Login /> 
       <Signup />
-      {/* <MyProfile /> */}
+     <MyProfile />
     </main>
   );
 };
