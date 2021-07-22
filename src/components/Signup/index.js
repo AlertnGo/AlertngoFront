@@ -15,8 +15,10 @@ function Signup(props) {
     const [password, setPassword] = useState("");
     const [telephone, setTelephone] = useState("");
     const [error, setError] = useState("");
+    console.log(email);
+
     
-    const signup = async (e) => {
+    const signup = async () => {
         const user = {
             nom: nom,
             prenom: prenom,
@@ -24,7 +26,6 @@ function Signup(props) {
             password: password,
             telephone: telephone,
         };
-        e.preventDefault();
         try {
             const response = await userServices.signup(user)
             if (response.status === 201) {
@@ -56,11 +57,11 @@ function Signup(props) {
        </label>
        <label>
          <p>Nom<span>*</span></p>
-         <input onChange={(e) => setPrenom(e.target.value)} type="text" name="firstname" placeholder="Nom" required />
+         <input onChange={(e) => setNom(e.target.value)} type="text" name="firstname" placeholder="Nom" required />
        </label>
        <label>
          <p>Prenom<span>*</span></p>
-         <input  onChange={(e) => setNom(e.target.value)} type="text" name="lastname" placeholder="Prenom" required />
+         <input  onChange={(e) => setPrenom(e.target.value)} type="text" name="lastname" placeholder="Prenom" required />
        </label>
        <label>
          <p>Mot de passe<span>*</span></p>
