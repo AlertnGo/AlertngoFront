@@ -13,6 +13,9 @@ const userServices = {
     profil: async (id) => {
         const url = "/user/" + id
         return await api.get (url)
+    },
+    getAllMyCars: async (id) => {
+        return await api.get(`/user/cars/${id}`)
     }
 }
 

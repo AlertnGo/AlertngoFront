@@ -27,14 +27,14 @@ function MyProfile(props) {
   }
 
   const getVehicles = async () => {
-    // try {
-    //   const response = await voitureServices.get(userid);
-    //   console.log(response.data.data[0]);
-    //   setMyinfo(response.data.data[0]);
-    // } catch (error) {
-    //   console.log(error.response.data.message);
-    //   setError(error.response.data.message);
-    // }
+    try {
+      const response = await userServices.getAllMyCars(userid);
+      console.log(response.data.data[0]);
+      setMyCars(response.data.data[0]);
+    } catch (error) {
+      console.log(error.response.data.message);
+      setError(error.response.data.message);
+    }
   }
 
   useEffect(() => {
