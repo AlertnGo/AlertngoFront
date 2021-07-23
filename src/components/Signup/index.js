@@ -18,7 +18,8 @@ function Signup(props) {
     console.log(email);
 
     
-    const signup = async () => {
+    const signup = async (e) => {
+      
         const user = {
             nom: nom,
             prenom: prenom,
@@ -27,6 +28,7 @@ function Signup(props) {
             telephone: telephone,
         };
         try {
+          e.preventDefault();
             const response = await userServices.signup(user)
             if (response.status === 201) {
               console.log("hello");
@@ -47,10 +49,10 @@ function Signup(props) {
        { error === ""
                 ? null
                 : <h5> {error} <button onClick={()=> setError("")}> X </button></h5>
-            }
-      </div>
-
-      <form className="fillform">
+            }helhel
+            </div>
+      
+            <form className="fillform" onSubmit={signup}>
       <label>
          <p>Email<span>*</span></p>
          <input onChange={(e) => setEmail(e.target.value)} type="text" name="email" placeholder="Email" required />
@@ -71,7 +73,7 @@ function Signup(props) {
          <p>Numero de telephone<span>*</span></p>
          <input onChange={(e) => setTelephone(e.target.value)} type="phone" name="telephone" placeholder="Telephone" maxLength="13" required />
        </label>
-       <button className="submitbutton" onClick={() => signup()}>Login</button>
+       <button className="submitbutton" type="submit">Se Login</button>
        <p>Veuillez remplir correctement les champs ci-dessus pour vous inscrire. Si vous êtes déjà inscrit, veuillez vous connecter en cliquant sur le lien ci-dessous.</p>
        <Link to="/me/login" className="linkbuttons">Me connecter</Link>
       </form>
