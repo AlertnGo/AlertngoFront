@@ -36,6 +36,17 @@ function MyProfile(props) {
     }
   };
 
+  const deleteOneCar = async (e) => {
+    const id = e.currentTarget.id;
+    console.log(e.currentTarget.id);
+    try {
+      await voitureService.deleteCar(id);
+      getVehicles();
+    } catch (error) {
+      setError(error);
+    }
+  };
+
   useEffect(() => {
     getProfile();
     getVehicles();
@@ -87,22 +98,20 @@ function MyProfile(props) {
 
         <div className="ndpdivider">
           {myCars.map((car, index) => (
-                <div className="ndpdiv" key={index}>
-                <p className="ndplate">{car.ndp}</p>
-                <div className="buttonset">
-                  <button className="button">
-                    <DeleteRoundedIcon />
-                    <p>Suprimer</p>
-                  </button>
-                  <button className="button">
-                    <EditRoundedIcon />
-                    <p>Modifier</p>
-                  </button>
-                </div>
+            <div className="ndpdiv" key={index}>
+              <p className="ndplate">{car.ndp}</p>
+              <div className="buttonset">
+                <button className="button" id={car.id} onClick={deleteOneCar}>
+                  <DeleteRoundedIcon />
+                  <p>Suprimer</p>
+                </button>
+                <button className="button">
+                  <EditRoundedIcon />
+                  <p>Modifier</p>
+                </button>
               </div>
+            </div>
           ))}
-
-      
         </div>
         <button className="button super">
           <AddBoxRoundedIcon />
