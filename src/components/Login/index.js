@@ -23,7 +23,7 @@ function Login(props) {
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("id", response.data.user.userId);
-        // props.history.push("/");
+        window.location.href = "/me"
       }
     } catch (error) {
       console.log(error.response.data.message);

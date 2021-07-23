@@ -36,6 +36,12 @@ function MyProfile(props) {
     }
   };
 
+
+  const signout = async () => {
+    localStorage.clear();
+    window.location.href = "/me";
+  };
+
   const deleteOneCar = async (e) => {
     const id = e.currentTarget.id;
     console.log(e.currentTarget.id);
@@ -73,7 +79,7 @@ function MyProfile(props) {
               <p>Modifier</p>
             </button>
           </div>
-          <button className="button super">
+          <button className="button super"onClick={signout}>
             <ExitToAppRoundedIcon />
             <p>Déconnecter</p>
           </button>
@@ -97,6 +103,12 @@ function MyProfile(props) {
         <h3>Mes Vehicles</h3>
 
         <div className="ndpdivider">
+          {myCars.length === 0 ? (
+            <p className="specialtext">
+              Vous n'avez pas encore ajouté votre véhicule, cliquez sur le
+              bouton ci-dessous pour ajouter vos véhicules
+            </p>
+          ) : null}
           {myCars.map((car, index) => (
             <div className="ndpdiv" key={index}>
               <p className="ndplate">{car.ndp}</p>
@@ -115,7 +127,7 @@ function MyProfile(props) {
         </div>
         <button className="button super">
           <AddBoxRoundedIcon />
-          <p>Ajouter un voiture</p>
+          <p>Ajouter</p>
         </button>
       </section>
     </section>

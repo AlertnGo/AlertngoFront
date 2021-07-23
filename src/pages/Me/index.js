@@ -7,11 +7,22 @@ import MyProfile from "../../components/MyProfile";
 import Notification from "../../components/Notification";
 
 const Me = (props) => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+  if (token) {
+    setIsLoggedIn(true);
+  } else {
+    setIsLoggedIn(false);
+  }
+  }, []);
+
+
   return (
     <main>
-     <Login /> 
-      <Signup />
-     <MyProfile />
+      {isLoggedIn ? <MyProfile /> : <Login />}
     </main>
   );
 };

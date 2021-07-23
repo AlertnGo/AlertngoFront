@@ -1,6 +1,5 @@
-
 $maincolor: #00ffff78;
-$darkmaincolor: #2070CA;
+$darkmaincolor: #2070ca;
 $lightmaincolor: #f1fcff;
 $black: #000000;
 $white: #ffffff;
@@ -8,9 +7,8 @@ $whitesmoke: #c8c8c8;
 $grey: #bbbbbb;
 $darkgrey: #1f1f1f;
 $firstbreakpoint: 1024px;
-$danger: #F38BA0;
+$danger: #f38ba0;
 $good: #4cff48;
-
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -19,7 +17,7 @@ $good: #4cff48;
   font-family: "Exo", sans-serif;
 }
 %fontMonts {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 h1 {
@@ -35,11 +33,11 @@ h2 {
   @extend %fontMonts;
 }
 
-h3{
+h3 {
   font-size: 2.7vh;
   font-weight: 700;
   @extend %fontMonts;
-  color:$darkmaincolor;
+  color: $darkmaincolor;
   border-bottom: 3px solid $darkmaincolor;
   margin: 3% 0% 3% 0%;
   width: max-content;
@@ -56,7 +54,6 @@ summary,
 input,
 label,
 button {
-  
   line-height: 200%;
   font-size: 2.3vh;
   @extend %fontMonts;
@@ -80,6 +77,12 @@ section {
   margin: 1% auto;
 }
 
+.specialtext {
+  width: 80%;
+  margin: 10% auto;
+  color: $danger;
+  @extend %fontMonts;
+}
 //buttonstyles
 .mainbutton {
   display: flex;

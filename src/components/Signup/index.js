@@ -118,7 +118,7 @@ function Signup(props) {
           Si vous êtes déjà inscrit, veuillez vous connecter en cliquant sur le
           lien ci-dessous.
         </p>
-        <Link to="/me/login" className="linkbuttons">
+        <Link to="/me" className="linkbuttons">
           Se connecter
         </Link>
       </form>
