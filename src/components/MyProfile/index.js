@@ -11,34 +11,34 @@ import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
 
 function MyProfile(props) {
   const [myinfo, setMyinfo] = useState([]);
-  const [myCar, setMyCars] = useState([]);
+  const [myCars, setMyCars] = useState([]);
   const [error, setError] = useState("");
   const userid = localStorage.getItem("id");
 
-  const  getProfile = async () => {
+  const getProfile = async () => {
     try {
       const response = await userServices.profil(userid);
-      console.log(response.data.data[0]);
       setMyinfo(response.data.data[0]);
     } catch (error) {
       console.log(error.response.data.message);
       setError(error.response.data.message);
     }
-  }
+  };
 
   const getVehicles = async () => {
     try {
       const response = await userServices.getAllMyCars(userid);
-      console.log(response.data.data[0]);
-      setMyCars(response.data.data[0]);
+      console.log(response.data.data);
+      setMyCars(response.data.data);
     } catch (error) {
       console.log(error.response.data.message);
       setError(error.response.data.message);
     }
-  }
+  };
 
   useEffect(() => {
     getProfile();
+    getVehicles();
   }, []);
 
   return (
@@ -47,7 +47,9 @@ function MyProfile(props) {
         <h3>Mes Informations</h3>
         <div className="infos">
           <div className="infodiv">
-            <h2>{myinfo.name} {myinfo.lastname}</h2>
+            <h2>
+              {myinfo.name} {myinfo.lastname}
+            </h2>
             <button className="button">
               <EditRoundedIcon />
               <p>Modifier</p>
@@ -82,48 +84,25 @@ function MyProfile(props) {
 
       <section className="devider">
         <h3>Mes Vehicles</h3>
+
         <div className="ndpdivider">
-          <div className="ndpdiv">
-            <p className="ndplate">ch 678 GT</p>
-            <div className="buttonset">
-              <button className="button">
-                <DeleteRoundedIcon />
-                <p>Suprimer</p>
-              </button>
-              <button className="button">
-                <EditRoundedIcon />
-                <p>Modifier</p>
-              </button>
-            </div>
-          </div>
+          {myCars.map((car, index) => (
+                <div className="ndpdiv" key={index}>
+                <p className="ndplate">{car.ndp}</p>
+                <div className="buttonset">
+                  <button className="button">
+                    <DeleteRoundedIcon />
+                    <p>Suprimer</p>
+                  </button>
+                  <button className="button">
+                    <EditRoundedIcon />
+                    <p>Modifier</p>
+                  </button>
+                </div>
+              </div>
+          ))}
 
-          <div className="ndpdiv">
-            <p className="ndplate">ch 678 GT</p>
-            <div className="buttonset">
-              <button className="button">
-                <DeleteRoundedIcon />
-                <p>Suprimer</p>
-              </button>
-              <button className="button">
-                <EditRoundedIcon />
-                <p>Modifier</p>
-              </button>
-            </div>
-          </div>
-
-          <div className="ndpdiv">
-            <p className="ndplate">ch 678 GT</p>
-            <div className="buttonset">
-              <button className="button">
-                <DeleteRoundedIcon />
-                <p>Suprimer</p>
-              </button>
-              <button className="button">
-                <EditRoundedIcon />
-                <p>Modifier</p>
-              </button>
-            </div>
-          </div>
+      
         </div>
         <button className="button super">
           <AddBoxRoundedIcon />
