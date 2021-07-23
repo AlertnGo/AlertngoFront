@@ -1,21 +1,45 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
-
+import userServices from "../../services/userService";
+import voitureService from "../../services/voitureService";
 //icons
 import EditRoundedIcon from "@material-ui/icons/EditRounded";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import AddBoxRoundedIcon from "@material-ui/icons/AddBoxRounded";
-import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
-import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
-
+import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
+import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
 
 function MyProfile(props) {
   const [myinfo, setMyinfo] = useState([]);
+  const [myCar, setMyCars] = useState([]);
   const [error, setError] = useState("");
+  const userid = localStorage.getItem("id");
 
-  // useEffect(() => {
+  const  getProfile = async () => {
+    try {
+      const response = await userServices.profil(userid);
+      console.log(response.data.data[0]);
+      setMyinfo(response.data.data[0]);
+    } catch (error) {
+      console.log(error.response.data.message);
+      setError(error.response.data.message);
+    }
+  }
 
-  // }, []);
+  const getVehicles = async () => {
+    // try {
+    //   const response = await voitureServices.get(userid);
+    //   console.log(response.data.data[0]);
+    //   setMyinfo(response.data.data[0]);
+    // } catch (error) {
+    //   console.log(error.response.data.message);
+    //   setError(error.response.data.message);
+    // }
+  }
+
+  useEffect(() => {
+    getProfile();
+  }, []);
 
   return (
     <section className="myprofile">
@@ -23,25 +47,24 @@ function MyProfile(props) {
         <h3>Mes Informations</h3>
         <div className="infos">
           <div className="infodiv">
-            <h2>Vishnu Gopy</h2>
+            <h2>{myinfo.name} {myinfo.lastname}</h2>
             <button className="button">
               <EditRoundedIcon />
               <p>Modifier</p>
             </button>
           </div>
           <div className="infodiv">
-            <h2>077655432</h2>
+            <h2>{myinfo.telephone}</h2>
             <button className="button">
               <EditRoundedIcon />
               <p>Modifier</p>
             </button>
           </div>
           <button className="button super">
-          <ExitToAppRoundedIcon />
-          <p>Déconnecter</p>
-        </button>
+            <ExitToAppRoundedIcon />
+            <p>Déconnecter</p>
+          </button>
         </div>
-        
       </section>
 
       <section className="devider">
@@ -60,48 +83,47 @@ function MyProfile(props) {
       <section className="devider">
         <h3>Mes Vehicles</h3>
         <div className="ndpdivider">
+          <div className="ndpdiv">
+            <p className="ndplate">ch 678 GT</p>
+            <div className="buttonset">
+              <button className="button">
+                <DeleteRoundedIcon />
+                <p>Suprimer</p>
+              </button>
+              <button className="button">
+                <EditRoundedIcon />
+                <p>Modifier</p>
+              </button>
+            </div>
+          </div>
 
           <div className="ndpdiv">
             <p className="ndplate">ch 678 GT</p>
             <div className="buttonset">
-            <button className="button">
-              <DeleteRoundedIcon />
-              <p>Suprimer</p>
-            </button>
-            <button className="button">
-              <EditRoundedIcon />
-              <p>Modifier</p>
-            </button></div>
+              <button className="button">
+                <DeleteRoundedIcon />
+                <p>Suprimer</p>
+              </button>
+              <button className="button">
+                <EditRoundedIcon />
+                <p>Modifier</p>
+              </button>
+            </div>
           </div>
-
 
           <div className="ndpdiv">
             <p className="ndplate">ch 678 GT</p>
             <div className="buttonset">
-            <button className="button">
-              <DeleteRoundedIcon />
-              <p>Suprimer</p>
-            </button>
-            <button className="button">
-              <EditRoundedIcon />
-              <p>Modifier</p>
-            </button></div>
+              <button className="button">
+                <DeleteRoundedIcon />
+                <p>Suprimer</p>
+              </button>
+              <button className="button">
+                <EditRoundedIcon />
+                <p>Modifier</p>
+              </button>
+            </div>
           </div>
-
-
-          <div className="ndpdiv">
-            <p className="ndplate">ch 678 GT</p>
-            <div className="buttonset">
-            <button className="button">
-              <DeleteRoundedIcon />
-              <p>Suprimer</p>
-            </button>
-            <button className="button">
-              <EditRoundedIcon />
-              <p>Modifier</p>
-            </button></div>
-          </div>
-
         </div>
         <button className="button super">
           <AddBoxRoundedIcon />
