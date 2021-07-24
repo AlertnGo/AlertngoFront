@@ -16,6 +16,7 @@ function MyProfile(props) {
   const [myinfo, setMyinfo] = useState([]);
   const [myCars, setMyCars] = useState([]);
   const [newNdp, setNewNdp] = useState("");
+  const [toggle, setToggle] = useState(false);
   const [error, setError] = useState("");
   const userid = localStorage.getItem("id");
 
@@ -44,10 +45,10 @@ function MyProfile(props) {
 
   const addNew = async (e) => {
     const ndp = newNdp;
-    const id = userid ;
+    const id = userid;
     try {
       e.preventDefault();
-      console.log(ndp , id );
+      console.log(ndp, id);
       // const response = await voitureService.addCar(ndp,id);
     } catch (error) {
       console.log(error);
@@ -144,13 +145,15 @@ function MyProfile(props) {
             </div>
           ))}
         </div>
-        <AddPage
-          addeSubmit={addNew}
-          lable="Numéro de d'immatriculation"
-          change={(e) => setNewNdp(e.target.value)}
-          placeholder="AA000AA"
-        />
-        <button className="button super">
+        {toggle === true ? (
+          <AddPage
+            addeSubmit={addNew}
+            lable="Numéro de d'immatriculation"
+            change={(e) => setNewNdp(e.target.value)}
+            placeholder="AA000AA"
+          />
+        ) : null}
+        <button className="button super" onClick={(e) => setToggle(!toggle)}>
           <AddBoxRoundedIcon />
           <p>Ajouter</p>
         </button>
