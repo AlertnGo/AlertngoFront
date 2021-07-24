@@ -3,13 +3,13 @@ import "./style.scss";
 
 function Addpage(props) {
   return (
-    <section className="flyingpage">
+    <section className="addSection">
       <form onSubmit={props.addeSubmit}>
         <label>
           <p>{props.lable}</p>
           <input type="text" name={props.lable} placeholder={props.placeholder} onChange={props.change}/>
         </label>
-        <button type="submit">Done</button>
+        <button type="submit"className="button">Done</button>
       </form>
     </section>
   );

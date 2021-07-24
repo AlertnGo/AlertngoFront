@@ -43,18 +43,12 @@ function MyProfile(props) {
   };
 
   const addNew = async (e) => {
-
-    const id = userid;
     const ndp = newNdp;
+    const id = userid ;
     try {
       e.preventDefault();
-      const response = await voitureService.addCar(ndp, id);
-      console.log(response.data.message);
-      if (response.data.message === "success") {
-        setError("");
-        setNewNdp("");
-        getProfile();
-      }
+      console.log(ndp , id );
+      // const response = await voitureService.addCar(ndp,id);
     } catch (error) {
       console.log(error);
       setError(error);
