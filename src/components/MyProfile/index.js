@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./style.scss";
 import userServices from "../../services/userService";
 import voitureService from "../../services/voitureService";
+
+//componant addpage
+import AddPage from "../Addpage";
 //icons
 import EditRoundedIcon from "@material-ui/icons/EditRounded";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
@@ -12,8 +15,11 @@ import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
 function MyProfile(props) {
   const [myinfo, setMyinfo] = useState([]);
   const [myCars, setMyCars] = useState([]);
+  const [newNdp, setNewNdp] = useState("");
   const [error, setError] = useState("");
   const userid = localStorage.getItem("id");
+
+  console.log(newNdp);
 
   const getProfile = async () => {
     try {
@@ -36,6 +42,24 @@ function MyProfile(props) {
     }
   };
 
+  const addNew = async (e) => {
+
+    const id = userid;
+    const ndp = newNdp;
+    try {
+      e.preventDefault();
+      const response = await voitureService.addCar(ndp, id);
+      console.log(response.data.message);
+      if (response.data.message === "success") {
+        setError("");
+        setNewNdp("");
+        getProfile();
+      }
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+  };
 
   const signout = async () => {
     localStorage.clear();
@@ -72,6 +96,7 @@ function MyProfile(props) {
               <p>Modifier</p>
             </button>
           </div>
+
           <div className="infodiv">
             <h2>{myinfo.telephone}</h2>
             <button className="button">
@@ -79,7 +104,7 @@ function MyProfile(props) {
               <p>Modifier</p>
             </button>
           </div>
-          <button className="button super"onClick={signout}>
+          <button className="button super" onClick={signout}>
             <ExitToAppRoundedIcon />
             <p>Déconnecter</p>
           </button>
@@ -125,6 +150,12 @@ function MyProfile(props) {
             </div>
           ))}
         </div>
+        <AddPage
+          addeSubmit={addNew}
+          lable="Numéro de d'immatriculation"
+          change={(e) => setNewNdp(e.target.value)}
+          placeholder="AA000AA"
+        />
         <button className="button super">
           <AddBoxRoundedIcon />
           <p>Ajouter</p>

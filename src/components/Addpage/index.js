@@ -4,13 +4,14 @@ import "./style.scss";
 function Addpage(props) {
   return (
     <section className="flyingpage">
-      <form onSubmit={props.handleSubmit}>
+      <form onSubmit={props.addeSubmit}>
         <label>
-          <p>JLDS</p>
-          <input type="text" name="name" placeholder="Name" />
+          <p>{props.lable}</p>
+          <input type="text" name={props.lable} placeholder={props.placeholder} onChange={props.change}/>
         </label>
+        <button type="submit">Done</button>
       </form>
     </section>
   );
 }
-export default Login;
+export default Addpage;
