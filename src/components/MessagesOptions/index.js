@@ -3,19 +3,18 @@ import { messagesServices } from "../../services";
 import "./style.scss";
 
 //icons
-import SendRoundedIcon from '@material-ui/icons/SendRounded';
+import SendRoundedIcon from "@material-ui/icons/SendRounded";
 
 function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
   const [mymessages, setMymessages] = useState("");
   const [error, setError] = useState("");
-
   useEffect(() => {
     const getMessages = async () => {
       try {
         const Messages = await messagesServices.getAll();
         setMessages(Messages.data.data);
-        console.log(Messages);
+        console.log(Messages.data.data);
       } catch (error) {
         if (error) {
           console.log(error);
@@ -27,23 +26,29 @@ function MessagesOptions(props) {
     getMessages();
   }, []);
 
+  const allmessages = document.querySelectorAll(".message input");
+  console.log(allmessages);
+  allmessages.forEach((element) => {
+    if ((element.checked = true)) {
+      console.log(element);
+    }
+  });
+
   return (
     <section className="messagesection">
       {messages.map((message, index) => (
-        <div
-          className="message"
-          key={index}
-          onClick={() => {
-            setMymessages({ message });
-          }}
-        >
-          <label>
-            <input type="radio" className="message" name="mess" />
-            <p>{message.message}</p>
-            <div className={message.type}></div>
-          </label>
+        <div key={index} htmlFor={"option" + message.id} className="message">
+          <input
+            type="radio"
+            id={"option" + message.id}
+            name="messageoption"
+            value={message.message}
+          />
+          <label htmlFor={"option" + message.id}>{message.message}</label>
+          <div className={messages.class}></div>
         </div>
       ))}
+
       <button className="mainbutton">
         <p>Send</p>
         <SendRoundedIcon />

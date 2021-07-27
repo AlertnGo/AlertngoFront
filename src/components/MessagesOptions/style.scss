@@ -1,55 +1,44 @@
 @import "../../assets/main.scss";
 
-.messagesection{
-  .message{
-    text-align: left;
-    width: 100%;
-    border: 2px solid $grey;
-    margin: 1% auto;
-    padding: 3% 1%;
-    background:$white;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    transition: all 0.1s ease-in-out;
+.messagesection {
 
-    input{
-      display: none;
-    }
-
-    &:hover{
-      border: 2px solid $darkmaincolor;
-      background: $darkmaincolor;
-      color: $white;
-    }
-
-    .danger{
-      margin: 1% 0% 0% auto;
-      width: 10%;
-      background:$danger;
-      height: 3vh;
-      border-radius: 5px;
-    }
-
-    .good{
-      margin: 1% 0% 0% auto;
-      width: 10%;
-      background:$good;
-      height: 3vh;
-      border-radius: 5px;
-    } 
-
-    :checked {
-      margin: 1% auto;
-      padding: 2%;
-      background:$maincolor;
-      color: $black;
-      border-radius: 5px;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      transition: all 0.1s ease-in-out;
-    }
-  }
+    .message{
+        text-align: left;
+        width: 100%;
+        border: 2px solid $grey;
+        margin: 1% auto;
+        padding: 3% 1%;
+        background:$white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+    
+        input{
+          display: block;
+        }
+    
+        &:hover{
+          border: 2px solid $darkmaincolor;
+          background: $darkmaincolor;
+          color: $white;
+        }
+    
+        .danger{
+          margin: 1% 0% 0% auto;
+          width: 10%;
+          background:$danger;
+          height: 3vh;
+          border-radius: 5px;
+        }
+    
+        .good{
+          margin: 1% 0% 0% auto;
+          width: 10%;
+          background:$good;
+          height: 3vh;
+          border-radius: 5px;
+        } 
+      }
 }

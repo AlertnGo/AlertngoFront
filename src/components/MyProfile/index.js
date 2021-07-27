@@ -20,8 +20,6 @@ function MyProfile(props) {
   const [error, setError] = useState("");
   const userid = localStorage.getItem("id");
 
-  console.log(newNdp);
-
   const getProfile = async () => {
     try {
       const response = await userServices.profil(userid);
@@ -45,11 +43,10 @@ function MyProfile(props) {
 
   const addNew = async (e) => {
     const ndp = newNdp;
-    const id = userid;
+    e.preventDefault();
     try {
-      e.preventDefault();
-      console.log(ndp, id);
-      // const response = await voitureService.addCar(ndp,id);
+      console.log(ndp, userid);
+      const response = await voitureService.addCar(ndp,userid);
     } catch (error) {
       console.log(error);
       setError(error);
