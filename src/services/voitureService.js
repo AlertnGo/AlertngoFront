@@ -8,7 +8,7 @@ const VoitureService = {
         return await api.delete(`/voitures/${id}`)
     },
     addCar: async (ndp,userid) => {
-        return await api.post('/voitures', ndp , userid)
+        return await api.post('/voitures', {ndp, userid})
     },
 }
 

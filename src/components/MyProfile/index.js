@@ -47,6 +47,7 @@ function MyProfile(props) {
     try {
       console.log(ndp, userid);
       const response = await voitureService.addCar(ndp,userid);
+      getVehicles();
     } catch (error) {
       console.log(error);
       setError(error);
