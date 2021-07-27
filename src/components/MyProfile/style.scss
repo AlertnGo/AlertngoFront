@@ -23,13 +23,15 @@
 
   .ndpdivider {
     display: flex;
-    flex-wrap: row;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 2%;
     .ndpdiv {
-      margin: 2% auto 3% auto;
+      margin: 2%  5% 0% 0%;
       flex: 1;
+      min-width: 40%;
+
 
       .ndplate {
         text-align: center;
@@ -53,7 +55,7 @@
   }
 
   .button {
-    margin: 2% 0%;
+    margin: 2% 0% 0% auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -92,5 +94,13 @@
       color: $white;
     }
   }
+}
+
+
+@media only screen and (max-width: $firstbreakpoint) {
+  .ndpdivider {
+   flex-direction: column;
+   flex-wrap: wrap;
+}
 }
 

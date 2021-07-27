@@ -16,7 +16,11 @@ function MyProfile(props) {
   const [myinfo, setMyinfo] = useState([]);
   const [myCars, setMyCars] = useState([]);
   const [newNdp, setNewNdp] = useState("");
+  const [newName, setNewName] = useState("");
+  const [newNum, setNewNum] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [nameToggle, setNameToggle] = useState(false);
+  const [numToggle, setNumToggle] = useState(false);
   const [error, setError] = useState("");
   const userid = localStorage.getItem("id");
 
@@ -46,8 +50,9 @@ function MyProfile(props) {
     e.preventDefault();
     try {
       console.log(ndp, userid);
-      const response = await voitureService.addCar(ndp,userid);
+      const response = await voitureService.addCar(ndp, userid);
       getVehicles();
+      setToggle(!toggle);
     } catch (error) {
       console.log(error);
       setError(error);
@@ -82,21 +87,41 @@ function MyProfile(props) {
         <div className="infos">
           <div className="infodiv">
             <h2>
-              {myinfo.name} {myinfo.lastname}
+              {myinfo.name}
             </h2>
-            <button className="button">
+            <button className="button" onClick={() => setNameToggle(!nameToggle)}>
               <EditRoundedIcon />
               <p>Modifier</p>
             </button>
+            
           </div>
-
+          {nameToggle === true ? (
+          <AddPage
+            addeSubmit={addNew}
+            lable="Name"
+            change={(e) => setNewName(e.target.value)}
+            placeholder= {myinfo.name}
+            max="20"
+            cancel={() => setNameToggle(!nameToggle)}
+          />
+        ) : null}
           <div className="infodiv">
             <h2>{myinfo.telephone}</h2>
-            <button className="button">
+            <button className="button"onClick={() => setNumToggle(!numToggle)}>
               <EditRoundedIcon />
               <p>Modifier</p>
             </button>
           </div>
+          {numToggle === true ? (
+          <AddPage
+            addeSubmit={addNew}
+            lable="Num"
+            change={(e) => setNewNum(e.target.value)}
+            placeholder= "0770000007"
+            max="10"
+            cancel={() => setNumToggle(!numToggle)}
+          />
+        ) : null}
           <button className="button super" onClick={signout}>
             <ExitToAppRoundedIcon />
             <p>Déconnecter</p>
@@ -104,7 +129,7 @@ function MyProfile(props) {
         </div>
       </section>
 
-      <section className="devider">
+      {/* <section className="devider">
         <h3>Theme</h3>
         <div className="infos">
           <div className="infodiv">
@@ -115,7 +140,7 @@ function MyProfile(props) {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="devider">
         <h3>Mes Vehicles</h3>
@@ -135,10 +160,7 @@ function MyProfile(props) {
                   <DeleteRoundedIcon />
                   <p>Suprimer</p>
                 </button>
-                <button className="button">
-                  <EditRoundedIcon />
-                  <p>Modifier</p>
-                </button>
+               
               </div>
             </div>
           ))}
@@ -149,7 +171,7 @@ function MyProfile(props) {
             lable="Numéro de d'immatriculation"
             change={(e) => setNewNdp(e.target.value)}
             placeholder="AA000AA"
-          />
+            max="7" cancel={() => setToggle(!toggle)}/>
         ) : null}
         <button className="button super" onClick={(e) => setToggle(!toggle)}>
           <AddBoxRoundedIcon />

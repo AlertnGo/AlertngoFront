@@ -7,9 +7,10 @@ function Addpage(props) {
       <form onSubmit={props.addeSubmit}>
         <label>
           <p>{props.lable}</p>
-          <input type="text" name={props.lable} placeholder={props.placeholder} onChange={props.change}/>
+          <input type="text" name={props.lable} placeholder={props.placeholder} onChange={props.change} maxLength={props.max}/>
         </label>
         <button type="submit"className="button">Done</button>
+      <button onClick={props.cancel} className="button">Cancel</button>
       </form>
     </section>
   );
