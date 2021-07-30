@@ -27,7 +27,7 @@ function Signup(props) {
       e.preventDefault();
       const response = await userServices.signup(user);
       if (response.status === 201) {
-        console.log("hello");
+        window.location.href = "/me";
       }
     } catch (error) {
       console.log(error.response.data.message);
