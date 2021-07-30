@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.scss";
 import { Link } from "react-router-dom";
 import userServices from "../../services/userService";
-
+import Notification from "../Notification";
 //imgs
 import logosvg from "../../assets/imgs/logosvg.svg";
 
@@ -41,10 +41,7 @@ function Signup(props) {
         <img src={logosvg} alt="logo" className="mainlogo" />
         <h2>Bienvenue sur AlertnGo</h2>
         {error === "" ? null : (
-          <h5>
-            {" "}
-            {error} <button onClick={() => setError("")}> X </button>
-          </h5>
+          < Notification notif={error} unsetfunction={() => setError("")}/>
         )}
       </div>
 

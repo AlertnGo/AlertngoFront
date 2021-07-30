@@ -78,6 +78,22 @@ section {
   margin: 1% auto;
 }
 
+.error{
+  color: red;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  button {
+    margin: 1% auto;
+    border: none;
+    background: none;
+    color: $danger;
+    padding: 0.5% 3%;
+    border-radius: 50%;
+  }
+}
+
 .specialtext {
   width: 80%;
   margin: 10% auto;

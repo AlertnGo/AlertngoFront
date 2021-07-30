@@ -5,24 +5,26 @@
   background: $white;
   color: $black;
   margin: 1%;
-  padding: 1%;
+  padding: 1% 5%;
   border: 2px solid black;
   border-radius: 5px;
   position: fixed;
   bottom: 0;
   left: 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+justify-content: space-around;
   text-align: left;
 
+ 
   .close {
+    display: flex;
     color: $black;
-    margin:0 auto;
+    margin:0% 2%;
     cursor: pointer;
     width: 20%;
     text-align: center;
     align-items: center;
+    justify-content: center;
 
     &:hover {
       color: $darkmaincolor;

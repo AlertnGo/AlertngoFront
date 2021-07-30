@@ -3,8 +3,9 @@ import "./style.scss";
 import userServices from "../../services/userService";
 import voitureService from "../../services/voitureService";
 
-//componant addpage
+//componants
 import AddPage from "../Addpage";
+import Notification from "../Notification";
 //icons
 import EditRoundedIcon from "@material-ui/icons/EditRounded";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
@@ -204,6 +205,9 @@ function MyProfile(props) {
           <p>Ajouter</p>
         </button>
       </section>
+      {error === "" ? null : (
+          < Notification notif={error} unsetfunction={() => setError("")}/>
+        )}
     </section>
   );
 }
