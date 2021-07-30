@@ -49,13 +49,39 @@ function MyProfile(props) {
     const ndp = newNdp;
     e.preventDefault();
     try {
-      console.log(ndp, userid);
       const response = await voitureService.addCar(ndp, userid);
       getVehicles();
+      setNewNdp("");
       setToggle(!toggle);
     } catch (error) {
-      console.log(error);
-      setError(error);
+      console.log(error.response.data.message);
+      setError(error.response.data.message);
+    }
+  };
+
+  const changeName = async (e) => {
+    e.preventDefault();
+    try {
+      await userServices.changeMyName(newName, userid);
+      getProfile();
+      setNewName("");
+      setNameToggle(!nameToggle);
+    } catch (error) {
+      console.log(error.response.data.message);
+      setError(error.response.data.message);
+    }
+  };
+
+  const changeNum = async (e) => {
+    e.preventDefault();
+    try {
+      await userServices.changeMyNum(newNum, userid);
+      getProfile();
+      setNewName("");
+      setNumToggle(!numToggle);
+    } catch (error) {
+      console.log(error.response.data.message);
+      setError(error.response.data.message);
     }
   };
 
@@ -97,7 +123,7 @@ function MyProfile(props) {
           </div>
           {nameToggle === true ? (
           <AddPage
-            addeSubmit={addNew}
+            addeSubmit={changeName}
             lable="Name"
             change={(e) => setNewName(e.target.value)}
             placeholder= {myinfo.name}
@@ -114,7 +140,7 @@ function MyProfile(props) {
           </div>
           {numToggle === true ? (
           <AddPage
-            addeSubmit={addNew}
+            addeSubmit={changeNum}
             lable="Num"
             change={(e) => setNewNum(e.target.value)}
             placeholder= "0770000007"
