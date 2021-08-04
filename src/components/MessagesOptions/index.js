@@ -9,7 +9,7 @@ function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
   const [mymessages, setMymessages] = useState("");
   const [error, setError] = useState("");
-  
+console.log(mymessages);      
 
   useEffect(() => {
     const getMessages = async () => {
@@ -26,20 +26,19 @@ function MessagesOptions(props) {
     getMessages();
   }, []);
 
-  const allmessages = document.querySelectorAll(".message input");
-console.log(allmessages);
+  const allmessages = document.querySelectorAll(".message p");
   allmessages.forEach(element => {
-    if (element.value == mymessages) {
+    if (element.innerHTML == mymessages) {
      element.parentElement.classList.add("selected");
     }else{
       element.parentElement.classList.remove("selected");
     }
-    
   });
 
 
   const handleSelect = async (e) => {
-    setMymessages(e.target.value);
+   
+    setMymessages(e.target.innerHTML);
   }
 
 
@@ -48,14 +47,8 @@ console.log(allmessages);
   return (
     <section className="messagesection">
       {messages.map((message, index) => (
-        <div key={index} htmlFor={"option" + message.id} className="message"  onClick={handleSelect}>
-          <input
-            type="radio"
-            id={"option" + message.id}
-            name="messageoption"
-            value={message.message}
-          />
-          <label htmlFor={"option" + message.id}>{message.message}</label>
+        <div key={index}  className="message"  onClick={handleSelect} >
+          <p >{message.message}</p>
           <div className={messages.class}></div>
         </div>
       ))}

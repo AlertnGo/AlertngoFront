@@ -13,6 +13,8 @@
     flex-direction: column;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
 
     input {
       display: none;
@@ -26,13 +28,10 @@
     &:active {
       border: 5px solid $darkmaincolor;
     }
-   
   }
   .selected {
     border: 2px solid $darkmaincolor;
-      background: $darkmaincolor;
-      color: $white;
+    background: $darkmaincolor;
+    color: $white;
   }
 }
-
-
