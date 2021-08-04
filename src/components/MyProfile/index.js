@@ -25,6 +25,10 @@ function MyProfile(props) {
   const [error, setError] = useState("");
   const userid = localStorage.getItem("id");
 
+  if (userid === null) {
+    window.location.href = "/me";
+  }
+
   const getProfile = async () => {
     try {
       const response = await userServices.profil(userid);
@@ -90,6 +94,7 @@ function MyProfile(props) {
     localStorage.clear();
     window.location.href = "/me";
   };
+
 
   const deleteOneCar = async (e) => {
     const id = e.currentTarget.id;

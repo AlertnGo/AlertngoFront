@@ -16,7 +16,8 @@ const Home = (props) => {
   const [userInfo, SetUserInfo] = useState("");
   const [bigerror, setBigError] = useState("");
   const [notif, setNotif] = useState(false);
-console.log(userInfo);
+  console.log(userInfo);
+
   const getCar = async (event) => {
     event.preventDefault();
     if (ndp === "") {
@@ -38,7 +39,7 @@ console.log(userInfo);
 
   const unset = async () => {
     setNotif(false);
-  }
+  };
 
   return (
     <main>
@@ -70,7 +71,13 @@ console.log(userInfo);
           />
         ) : null}
       </section>
-      {userInfo ? <MessagesOptions /> : userInfo == undefined ? <NotFound /> :   <DefaultAnimation />}
+      {userInfo ? (
+        <MessagesOptions />
+      ) : userInfo == undefined ? (
+        <NotFound />
+      ) : (
+        <DefaultAnimation />
+      )}
     </main>
   );
 };
