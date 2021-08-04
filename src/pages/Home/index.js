@@ -27,7 +27,7 @@ const Home = (props) => {
         const userData = await VoitureService.getByNdp(ndp);
         const userDataNum = userData.data.data[0];
         SetUserInfo(userDataNum);
-        localStorage.setItem("codeNum", userInfo);
+        localStorage.setItem("PhoneNumber", userInfo);
       } catch (error) {
         if (error) {
           console.log(error);

@@ -9,7 +9,8 @@ function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
   const [mymessages, setMymessages] = useState("");
   const [error, setError] = useState("");
-console.log(mymessages);      
+  const PhoneNumber = localStorage.getItem("PhoneNumber");
+  console.log(mymessages);
 
   useEffect(() => {
     const getMessages = async () => {
@@ -27,33 +28,33 @@ console.log(mymessages);
   }, []);
 
   const allmessages = document.querySelectorAll(".message p");
-  allmessages.forEach(element => {
+  allmessages.forEach((element) => {
     if (element.innerHTML == mymessages) {
-     element.parentElement.classList.add("selected");
-    }else{
+      element.parentElement.classList.add("selected");
+    } else {
       element.parentElement.classList.remove("selected");
     }
   });
 
-
   const handleSelect = async (e) => {
-   
     setMymessages(e.target.innerHTML);
+  };
+
+
+  const sendMessage = async () => {
+    console.log(PhoneNumber + " " + mymessages);
   }
-
-
-
 
   return (
     <section className="messagesection">
       {messages.map((message, index) => (
-        <div key={index}  className="message"  onClick={handleSelect} >
-          <p >{message.message}</p>
+        <div key={index} className="message" onClick={handleSelect}>
+          <p>{message.message}</p>
           <div className={messages.class}></div>
         </div>
       ))}
 
-      <button className="mainbutton">
+      <button className="mainbutton"onClick={sendMessage}>
         <p>Send</p>
         <SendRoundedIcon />
       </button>
