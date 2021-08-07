@@ -9,8 +9,8 @@ function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
   const [mymessages, setMymessages] = useState("");
   const [error, setError] = useState("");
-  const PhoneNumber = localStorage.getItem("PhoneNumber");
-  console.log(mymessages);
+  const PhoneNumber = localStorage.getItem('Number');
+
 
   useEffect(() => {
     const getMessages = async () => {
@@ -42,7 +42,8 @@ function MessagesOptions(props) {
 
 
   const sendMessage = async () => {
-    console.log(PhoneNumber + " " + mymessages);
+
+    console.log(PhoneNumber + " sending......... " + mymessages);
   }
 
   return (

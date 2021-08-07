@@ -16,7 +16,8 @@ const Home = (props) => {
   const [userInfo, SetUserInfo] = useState("");
   const [bigerror, setBigError] = useState("");
   const [notif, setNotif] = useState(false);
-  console.log(userInfo);
+  localStorage.setItem('Number', userInfo);
+
 
   const getCar = async (event) => {
     event.preventDefault();
@@ -25,9 +26,8 @@ const Home = (props) => {
     } else {
       try {
         const userData = await VoitureService.getByNdp(ndp);
-        const userDataNum = userData.data.data[0];
+        const userDataNum = userData.data.data[0].telephone;
         SetUserInfo(userDataNum);
-        localStorage.setItem("PhoneNumber", userInfo);
       } catch (error) {
         if (error) {
           console.log(error);
