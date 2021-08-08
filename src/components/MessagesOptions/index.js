@@ -42,8 +42,8 @@ function MessagesOptions(props) {
 
 
   const sendMessage = async () => {
-
     console.log(PhoneNumber + " sending......... " + mymessages);
+    window.location.href = "sent";
   }
 
   return (
