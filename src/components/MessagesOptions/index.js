@@ -9,8 +9,7 @@ function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
   const [mymessages, setMymessages] = useState("");
   const [error, setError] = useState("");
-  const PhoneNumber = localStorage.getItem('Number');
-
+  const PhoneNumber = localStorage.getItem("Number");
 
   useEffect(() => {
     const getMessages = async () => {
@@ -40,11 +39,43 @@ function MessagesOptions(props) {
     setMymessages(e.target.innerHTML);
   };
 
-
-  const sendMessage = async () => {
+  const sendMessage = async (e) => {
+    e.preventDefault();
     console.log(PhoneNumber + " sending......... " + mymessages);
-    window.location.href = "sent";
-  }
+    // var axios = require("axios").default;
+
+    // var options = {
+    //   method: 'POST',
+    //   url: 'https://clicksend.p.rapidapi.com/sms/send',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //     authorization: 'Basic dmlzaG51Z29ieTAwMTA6Z3RZNkxXSDdLa3hVeCVK',
+    //     'x-rapidapi-key': '0562cce25emshb2665f0728e14f4p1ef2f1jsn9801b0ee8fbe',
+    //     'x-rapidapi-host': 'clicksend.p.rapidapi.com'
+    //   },
+    //   data: {
+    //     messages: [
+    //       {
+    //         source: 'mashape',
+    //         from: 'Alertngo',
+    //         body: mymessages,
+    //         to: '0033663376422',
+    //         schedule: '1452244637',
+    //         custom_string: 'Alert'
+    //       }
+    //     ]
+    //   }
+    // };
+    
+    // axios.request(options).then(function (response) {
+    //   console.log(response.data);
+    //   if (response.data.response_code == "SUCCESS") {
+    //     window.location.href = "sent";
+    //   }
+    // }).catch(function (error) {
+    //   console.error(error);
+    // });
+  };
 
   return (
     <section className="messagesection">
@@ -55,7 +86,7 @@ function MessagesOptions(props) {
         </div>
       ))}
 
-      <button className="mainbutton"onClick={sendMessage}>
+      <button className="mainbutton" onClick={sendMessage}>
         <p>Send</p>
         <SendRoundedIcon />
       </button>
