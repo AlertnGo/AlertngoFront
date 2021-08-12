@@ -42,7 +42,7 @@ function MessagesOptions(props) {
   const sendMessage = async (e) => {
     e.preventDefault();
     console.log(PhoneNumber + " sending......... " + mymessages);
-    
+    window.location.href = "sent";
   };
 
   return (
