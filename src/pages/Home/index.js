@@ -17,10 +17,11 @@ const Home = (props) => {
   const [bigerror, setBigError] = useState("");
   const [notif, setNotif] = useState(false);
   localStorage.setItem('Number', userInfo);
-
+console.log(userInfo);
 
   const getCar = async (event) => {
     event.preventDefault();
+    SetUserInfo("");
     if (ndp === "") {
       setNotif(true);
     } else {
@@ -73,11 +74,12 @@ const Home = (props) => {
       </section>
       {userInfo ? (
         <MessagesOptions />
-      ) : userInfo == undefined ? (
+      ) : userInfo == null ? (
         <NotFound />
       ) : (
         <DefaultAnimation />
       )}
+
     </main>
   );
 };
