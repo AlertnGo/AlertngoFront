@@ -32,6 +32,9 @@ console.log(userInfo);
       } catch (error) {
         if (error) {
           console.log(error);
+          if (error) {
+            SetUserInfo(undefined);
+          }
           setBigError(error);
         }
       }

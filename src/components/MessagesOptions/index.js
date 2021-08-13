@@ -9,8 +9,7 @@ function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
   const [mymessages, setMymessages] = useState("");
   const [error, setError] = useState("");
-  const PhoneNumber = localStorage.getItem('Number');
-
+  const PhoneNumber = localStorage.getItem("Number");
 
   useEffect(() => {
     const getMessages = async () => {
@@ -40,11 +39,11 @@ function MessagesOptions(props) {
     setMymessages(e.target.innerHTML);
   };
 
-
-  const sendMessage = async () => {
+  const sendMessage = async (e) => {
+    e.preventDefault();
     console.log(PhoneNumber + " sending......... " + mymessages);
     window.location.href = "sent";
-  }
+  };
 
   return (
     <section className="messagesection">
@@ -55,7 +54,7 @@ function MessagesOptions(props) {
         </div>
       ))}
 
-      <button className="mainbutton"onClick={sendMessage}>
+      <button className="mainbutton" onClick={sendMessage}>
         <p>Send</p>
         <SendRoundedIcon />
       </button>
