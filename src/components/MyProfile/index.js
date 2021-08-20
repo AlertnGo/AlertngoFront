@@ -12,6 +12,7 @@ import EditRoundedIcon from "@material-ui/icons/EditRounded";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import AddBoxRoundedIcon from "@material-ui/icons/AddBoxRounded";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
+import Brightness6RoundedIcon from '@material-ui/icons/Brightness6Rounded';
 
 
 function MyProfile(props) {
@@ -63,6 +64,10 @@ function MyProfile(props) {
       setError(error.response.data.message);
     }
   };
+
+  const ThemeChange = () => {
+    document.documentElement.classList.toggle("darkmode");
+  }
 
   const changeName = async (e) => {
     e.preventDefault();
@@ -152,6 +157,15 @@ function MyProfile(props) {
             cancel={() => setNumToggle(!numToggle)}
           />
         ) : null}
+
+          <div className="infodiv">
+          <h2>Thème</h2>
+            <button className="button"onClick={ThemeChange}>
+              <Brightness6RoundedIcon />
+              <p>Basculer</p>
+            </button>
+          </div>
+
           <button className="button super" onClick={signout}>
             <ExitToAppRoundedIcon />
             <p>Déconnecter</p>

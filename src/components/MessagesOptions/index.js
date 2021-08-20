@@ -55,7 +55,7 @@ function MessagesOptions(props) {
       ))}
 
       <button className="mainbutton" onClick={sendMessage}>
-        <p>Send</p>
+        <p>Envoyer</p>
         <SendRoundedIcon />
       </button>
     </section>
