@@ -25,9 +25,9 @@ function MyProfile(props) {
   const [error, setError] = useState("");
   const userid = localStorage.getItem("id");
 
-  if (userid === null) {
-    window.location.href = "/me";
-  }
+  // if (userid === null) {
+  //   window.location.href = "/me";
+  // }
 
   const getProfile = async () => {
     try {

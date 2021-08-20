@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./style.scss";
 //components
 import Login from "../../components/Login";
@@ -7,7 +8,7 @@ import MyProfile from "../../components/MyProfile";
 import Notification from "../../components/Notification";
 
 const Me = (props) => {
-
+  const history = useHistory();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const token = localStorage.getItem("token");
 
@@ -22,7 +23,7 @@ const Me = (props) => {
 
   return (
     <main>
-      {isLoggedIn ? <MyProfile /> : <Login />}
+      {isLoggedIn ? <MyProfile /> : history.push("/me/login")}
     </main>
   );
 };

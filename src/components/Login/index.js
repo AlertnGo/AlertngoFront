@@ -3,7 +3,7 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import userServices from "../../services/userService";
 import Notification from "../Notification";
-
+import { useHistory } from "react-router-dom";
 //imgs
 import logosvg from "../../assets/imgs/logosvg.svg";
 
@@ -11,6 +11,7 @@ function Login(props) {
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const login = async (e) => {
     const user = {
@@ -24,7 +25,7 @@ function Login(props) {
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("id", response.data.user.userId);
-        window.location.href = "/me"
+        history.push("/me/profile");
       }
     } catch (error) {
       console.log(error.response.data.message);
