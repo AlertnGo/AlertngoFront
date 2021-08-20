@@ -3,6 +3,7 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 import userServices from "../../services/userService";
 import Notification from "../Notification";
+import { useHistory } from "react-router-dom";
 //imgs
 import logosvg from "../../assets/imgs/logosvg.svg";
 
@@ -13,7 +14,7 @@ function Signup(props) {
   const [password, setPassword] = useState("");
   const [telephone, setTelephone] = useState("");
   const [error, setError] = useState("");
-  console.log(email);
+  const history = useHistory();
 
   const signup = async (e) => {
     const user = {
@@ -27,7 +28,7 @@ function Signup(props) {
       e.preventDefault();
       const response = await userServices.signup(user);
       if (response.status === 201) {
-        window.location.href = "/me";
+       history.push("me/login");
       }
     } catch (error) {
       console.log(error.response.data.message);

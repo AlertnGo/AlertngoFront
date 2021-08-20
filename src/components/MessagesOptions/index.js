@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { messagesServices } from "../../services";
 import "./style.scss";
+import {useHistory} from 'react-router-dom';
 
 //icons
 import SendRoundedIcon from "@material-ui/icons/SendRounded";
@@ -10,7 +11,7 @@ function MessagesOptions(props) {
   const [mymessages, setMymessages] = useState("");
   const [error, setError] = useState("");
   const PhoneNumber = localStorage.getItem("Number");
-
+  const history = useHistory();
   useEffect(() => {
     const getMessages = async () => {
       try {
@@ -42,7 +43,7 @@ function MessagesOptions(props) {
   const sendMessage = async (e) => {
     e.preventDefault();
     console.log(PhoneNumber + " sending......... " + mymessages);
-    window.location.href = "sent";
+    history.push("/sent");
   };
 
   return (

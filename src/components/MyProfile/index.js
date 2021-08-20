@@ -27,9 +27,9 @@ function MyProfile(props) {
   const history = useHistory();
   const userid = localStorage.getItem("id");
 
-  // if (userid === null) {
-  //   window.location.href = "/me";
-  // }
+  if (userid === null) {
+    history.push("/me/login");
+  }
 
   const getProfile = async () => {
     try {
