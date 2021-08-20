@@ -23,7 +23,7 @@ const Me = (props) => {
 
   return (
     <main>
-      {isLoggedIn ? <MyProfile /> : history.push("/me/login")}
+      {isLoggedIn ? <MyProfile /> : null }
     </main>
   );
 };

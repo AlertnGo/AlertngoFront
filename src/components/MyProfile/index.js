@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.scss";
 import userServices from "../../services/userService";
 import voitureService from "../../services/voitureService";
+import { useHistory } from "react-router-dom";
 
 //componants
 import AddPage from "../Addpage";
@@ -23,6 +24,7 @@ function MyProfile(props) {
   const [nameToggle, setNameToggle] = useState(false);
   const [numToggle, setNumToggle] = useState(false);
   const [error, setError] = useState("");
+  const history = useHistory();
   const userid = localStorage.getItem("id");
 
   // if (userid === null) {
@@ -92,7 +94,7 @@ function MyProfile(props) {
 
   const signout = async () => {
     localStorage.clear();
-    window.location.href = "/me";
+    history.push("/me/login");
   };
 
 
