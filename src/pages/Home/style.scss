@@ -1,6 +1,9 @@
 @import "../../assets/main.scss";
 
 .mainform {
+  label{
+    color:$black;
+  }
   .searchBar {
     width: 100%;
     outline: none;

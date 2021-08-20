@@ -8,7 +8,11 @@
     outline-color: black;
 }
 
+html.darkmode{
+ filter: invert(100%) hue-rotate(180deg);
+}
+
 body{
-    background: $whitesmoke;
-    // filter: invert(5);
+    background:$whitesmoke;
+   
 }
