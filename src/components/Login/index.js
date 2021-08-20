@@ -21,14 +21,14 @@ function Login(props) {
     try {
       e.preventDefault();
       const response = await userServices.login(user);
-      console.log(response);
+
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("id", response.data.user.userId);
         history.push("/me/profile");
       }
     } catch (error) {
-      console.log(error.response.data.message);
+
       setError(error.response.data.message);
     }
   };

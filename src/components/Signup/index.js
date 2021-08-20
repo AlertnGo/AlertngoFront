@@ -31,7 +31,6 @@ function Signup(props) {
        history.push("me/login");
       }
     } catch (error) {
-      console.log(error.response.data.message);
       setError(error.response.data.message);
     }
   };

@@ -19,7 +19,6 @@ function MessagesOptions(props) {
         setMessages(Messages.data.data);
       } catch (error) {
         if (error) {
-          console.log(error);
           setError(error);
         }
       }

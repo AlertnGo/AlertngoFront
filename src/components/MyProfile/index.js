@@ -36,7 +36,6 @@ function MyProfile(props) {
       const response = await userServices.profil(userid);
       setMyinfo(response.data.data[0]);
     } catch (error) {
-      console.log(error.response.data.message);
       setError(error.response.data.message);
     }
   };
@@ -44,10 +43,9 @@ function MyProfile(props) {
   const getVehicles = async () => {
     try {
       const response = await userServices.getAllMyCars(userid);
-      console.log(response.data.data);
+
       setMyCars(response.data.data);
     } catch (error) {
-      console.log(error.response.data.message);
       setError(error.response.data.message);
     }
   };
@@ -61,7 +59,7 @@ function MyProfile(props) {
       setNewNdp("");
       setToggle(!toggle);
     } catch (error) {
-      console.log(error.response.data.message);
+
       setError(error.response.data.message);
     }
   };
@@ -74,7 +72,6 @@ function MyProfile(props) {
       setNewName("");
       setNameToggle(!nameToggle);
     } catch (error) {
-      console.log(error.response.data.message);
       setError(error.response.data.message);
     }
   };
@@ -87,7 +84,7 @@ function MyProfile(props) {
       setNewName("");
       setNumToggle(!numToggle);
     } catch (error) {
-      console.log(error.response.data.message);
+   
       setError(error.response.data.message);
     }
   };
@@ -100,7 +97,6 @@ function MyProfile(props) {
 
   const deleteOneCar = async (e) => {
     const id = e.currentTarget.id;
-    console.log(e.currentTarget.id);
     try {
       await voitureService.deleteCar(id);
       getVehicles();
