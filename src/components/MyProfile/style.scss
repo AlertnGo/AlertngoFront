@@ -22,17 +22,11 @@
   }
 
   .ndpdivider {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2%;
+    display: grid;
+    gap: 1em;
     .ndpdiv {
-      margin: 2%  5% 0% 0%;
+      margin: 3% 0%;
       flex: 1;
-      min-width: 40%;
-
-
       .ndplate {
         text-align: center;
         text-transform: uppercase;
@@ -97,10 +91,10 @@
 }
 
 
-@media only screen and (max-width: $firstbreakpoint) {
+@media only screen and (min-width: $firstbreakpoint) {
   .ndpdivider {
-   flex-direction: column;
-   flex-wrap: wrap;
-}
+    display: grid;
+    grid-template-columns: auto auto;
+  }
 }
 

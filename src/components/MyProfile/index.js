@@ -147,7 +147,7 @@ function MyProfile(props) {
             addeSubmit={changeNum}
             lable="Num"
             change={(e) => setNewNum(e.target.value)}
-            placeholder= "0770000007"
+            placeholder= {myinfo.telephone}
             max="10"
             cancel={() => setNumToggle(!numToggle)}
           />
@@ -159,18 +159,7 @@ function MyProfile(props) {
         </div>
       </section>
 
-      {/* <section className="devider">
-        <h3>Theme</h3>
-        <div className="infos">
-          <div className="infodiv">
-            <h2>Mode Sombre</h2>
-            <button className="button">
-              <Brightness4RoundedIcon />
-              <p>Toggle</p>
-            </button>
-          </div>
-        </div>
-      </section> */}
+
 
       <section className="devider">
         <h3>Mes Vehicles</h3>
