@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import Notification from "../../components/Notification";
 import { VoitureService } from "../../services";
@@ -76,7 +76,7 @@ const Home = (props) => {
       </section>
       {userInfo ? (
         <MessagesOptions />
-      ) : userInfo == undefined ? (
+      ) : userInfo === undefined ? (
         <NotFound />
       ) : (
         <DefaultAnimation />

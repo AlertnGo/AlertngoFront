@@ -12,7 +12,7 @@ import EditRoundedIcon from "@material-ui/icons/EditRounded";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import AddBoxRoundedIcon from "@material-ui/icons/AddBoxRounded";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
-import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
+
 
 function MyProfile(props) {
   const [myinfo, setMyinfo] = useState([]);
@@ -56,7 +56,7 @@ function MyProfile(props) {
     const ndp = newNdp;
     e.preventDefault();
     try {
-      const response = await voitureService.addCar(ndp, userid);
+      await voitureService.addCar(ndp, userid);
       getVehicles();
       setNewNdp("");
       setToggle(!toggle);

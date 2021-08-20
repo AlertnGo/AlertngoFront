@@ -29,7 +29,7 @@ function MessagesOptions(props) {
 
   const allmessages = document.querySelectorAll(".message p");
   allmessages.forEach((element) => {
-    if (element.innerHTML == mymessages) {
+    if (element.innerHTML === mymessages) {
       element.parentElement.classList.add("selected");
     } else {
       element.parentElement.classList.remove("selected");

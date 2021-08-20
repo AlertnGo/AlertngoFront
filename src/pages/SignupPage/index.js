@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from "react";
-//components
-
+import React from "react";
 import Signup from "../../components/Signup";
-
 
 const SignupPage = (props) => {
   return (

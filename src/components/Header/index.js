@@ -15,7 +15,7 @@ function Header(props) {
           </div>
         </Link>
 
-        <Link to="/me/login">
+        <Link to="/me/profile">
           <div className="navbutton borderright">
             <FaceRoundedIcon />
             <p>Moi</p>
