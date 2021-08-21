@@ -28,7 +28,7 @@ function Signup(props) {
       e.preventDefault();
       const response = await userServices.signup(user);
       if (response.status === 201) {
-       history.push("me/login");
+       history.push("/me/login");
       }
     } catch (error) {
       setError(error.response.data.message);
