@@ -28,7 +28,6 @@ function Login(props) {
         history.push("/me/profile");
       }
     } catch (error) {
-
       setError(error.response.data.message);
     }
   };
