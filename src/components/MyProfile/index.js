@@ -12,8 +12,7 @@ import EditRoundedIcon from "@material-ui/icons/EditRounded";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import AddBoxRoundedIcon from "@material-ui/icons/AddBoxRounded";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
-import Brightness6RoundedIcon from '@material-ui/icons/Brightness6Rounded';
-
+import Brightness6RoundedIcon from "@material-ui/icons/Brightness6Rounded";
 
 function MyProfile(props) {
   const [myinfo, setMyinfo] = useState([]);
@@ -37,7 +36,7 @@ function MyProfile(props) {
       const response = await userServices.profil(userid);
       setMyinfo(response.data.data[0]);
     } catch (error) {
-      setError(error.response.data.message);
+      console.log(error);
     }
   };
 
@@ -47,7 +46,7 @@ function MyProfile(props) {
 
       setMyCars(response.data.data);
     } catch (error) {
-      setError(error.response.data.message);
+      setError(error);
     }
   };
 
@@ -60,14 +59,13 @@ function MyProfile(props) {
       setNewNdp("");
       setToggle(!toggle);
     } catch (error) {
-
       setError(error.response.data.message);
     }
   };
 
   const ThemeChange = () => {
     document.documentElement.classList.toggle("darkmode");
-  }
+  };
 
   const changeName = async (e) => {
     e.preventDefault();
@@ -89,7 +87,6 @@ function MyProfile(props) {
       setNewName("");
       setNumToggle(!numToggle);
     } catch (error) {
-   
       setError(error.response.data.message);
     }
   };
@@ -98,7 +95,6 @@ function MyProfile(props) {
     localStorage.clear();
     history.push("/me/login");
   };
-
 
   const deleteOneCar = async (e) => {
     const id = e.currentTarget.id;
@@ -113,7 +109,7 @@ function MyProfile(props) {
   useEffect(() => {
     getProfile();
     getVehicles();
-  }, []);
+  }, [getProfile, getVehicles]);
 
   return (
     <section className="myprofile">
@@ -121,46 +117,46 @@ function MyProfile(props) {
         <h3>Mes Informations</h3>
         <div className="infos">
           <div className="infodiv">
-            <h2>
-              {myinfo.name}
-            </h2>
-            <button className="button" onClick={() => setNameToggle(!nameToggle)}>
+            <h2>{myinfo.name}</h2>
+            <button
+              className="button"
+              onClick={() => setNameToggle(!nameToggle)}
+            >
               <EditRoundedIcon />
               <p>Modifier</p>
             </button>
-            
           </div>
           {nameToggle === true ? (
-          <AddPage
-            addeSubmit={changeName}
-            lable="Name"
-            change={(e) => setNewName(e.target.value)}
-            placeholder= {myinfo.name}
-            max="20"
-            cancel={() => setNameToggle(!nameToggle)}
-          />
-        ) : null}
+            <AddPage
+              addeSubmit={changeName}
+              lable="Name"
+              change={(e) => setNewName(e.target.value)}
+              placeholder={myinfo.name}
+              max="20"
+              cancel={() => setNameToggle(!nameToggle)}
+            />
+          ) : null}
           <div className="infodiv">
             <h2>{myinfo.telephone}</h2>
-            <button className="button"onClick={() => setNumToggle(!numToggle)}>
+            <button className="button" onClick={() => setNumToggle(!numToggle)}>
               <EditRoundedIcon />
               <p>Modifier</p>
             </button>
           </div>
           {numToggle === true ? (
-          <AddPage
-            addeSubmit={changeNum}
-            lable="Num"
-            change={(e) => setNewNum(e.target.value)}
-            placeholder= {myinfo.telephone}
-            max="10"
-            cancel={() => setNumToggle(!numToggle)}
-          />
-        ) : null}
+            <AddPage
+              addeSubmit={changeNum}
+              lable="Num"
+              change={(e) => setNewNum(e.target.value)}
+              placeholder={myinfo.telephone}
+              max="10"
+              cancel={() => setNumToggle(!numToggle)}
+            />
+          ) : null}
 
           <div className="infodiv">
-          <h2>Thème</h2>
-            <button className="button"onClick={ThemeChange}>
+            <h2>Thème</h2>
+            <button className="button" onClick={ThemeChange}>
               <Brightness6RoundedIcon />
               <p>Basculer</p>
             </button>
@@ -172,8 +168,6 @@ function MyProfile(props) {
           </button>
         </div>
       </section>
-
-
 
       <section className="devider">
         <h3>Mes Vehicles</h3>
@@ -193,7 +187,6 @@ function MyProfile(props) {
                   <DeleteRoundedIcon />
                   <p>Suprimer</p>
                 </button>
-               
               </div>
             </div>
           ))}
@@ -204,7 +197,9 @@ function MyProfile(props) {
             lable="Numéro de d'immatriculation"
             change={(e) => setNewNdp(e.target.value)}
             placeholder="AA000AA"
-            max="7" cancel={() => setToggle(!toggle)}/>
+            max="7"
+            cancel={() => setToggle(!toggle)}
+          />
         ) : null}
         <button className="button super" onClick={(e) => setToggle(!toggle)}>
           <AddBoxRoundedIcon />
@@ -212,8 +207,8 @@ function MyProfile(props) {
         </button>
       </section>
       {error === "" ? null : (
-          < Notification notif={error} unsetfunction={() => setError("")}/>
-        )}
+        <Notification notif={error} unsetfunction={() => setError("")} />
+      )}
     </section>
   );
 }
