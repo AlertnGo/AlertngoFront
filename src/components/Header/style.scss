@@ -1,8 +1,8 @@
 @import "../../assets/main.scss";
 
 .headerpc {
-  width: 60%;
-  margin: 0.5% auto;
+  width: 100%;
+  margin: 0% auto;
   height: auto;
   display: flex;
   justify-content: space-around;
@@ -14,10 +14,6 @@
     font-weight: 700;
     width: 100%;
     height: auto;
-    
-    
-
-    
 
     &:hover div {
       color: $white;
@@ -25,7 +21,7 @@
     }
 
     .navbutton {
-      background:$white;
+      background: $white;
       padding: 3% 5%;
       width: 100%;
       display: flex;
@@ -35,27 +31,13 @@
       transition: 0.2s all ease-in-out;
       color: $darkmaincolor;
       font-size: 2.5em;
-      
-      p{
-        text-transform: uppercase;
+
+      p {
         margin: 0% 2%;
       }
-      a{
-        font-size: 2vh;
+      a {
+        font-size: 1.5em;
       }
-    }
-    
-    .borderleft{
-      border: 2px solid $darkmaincolor;
-      border-right: none;
-      border-radius: 15px 0px 0px 15px;
-      
-    }
-
-    .borderright{
-     border: 2px solid $darkmaincolor;
-      border-left: none;
-      border-radius: 0px 15px  15px 0px;
     }
   }
 }

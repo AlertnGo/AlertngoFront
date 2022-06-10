@@ -1,8 +1,5 @@
-import {Link } from "react-router-dom";
-import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-import FaceRoundedIcon from '@material-ui/icons/FaceRounded';
+import { Link } from "react-router-dom";
 import "./style.scss";
-
 
 function Header(props) {
   return (
@@ -10,18 +7,21 @@ function Header(props) {
       <div className="headerpc">
         <Link to="/">
           <div className="navbutton borderleft">
-            <HomeRoundedIcon />
-            <p>ACCUEIL</p>
+            <p>Accueil</p>
+          </div>
+        </Link>
+
+        <Link to="/">
+          <div className="navbutton borderleft">
+            <p>Accueil</p>
           </div>
         </Link>
 
         <Link to="/me/profile">
           <div className="navbutton borderright">
-            <FaceRoundedIcon />
             <p>Moi</p>
           </div>
         </Link>
-      
       </div>
     </header>
   );
