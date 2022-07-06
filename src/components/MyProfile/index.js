@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import userServices from "../../services/userService";
 import voitureService from "../../services/voitureService";
@@ -14,9 +14,9 @@ import AddBoxRoundedIcon from "@material-ui/icons/AddBoxRounded";
 import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
 import Brightness6RoundedIcon from "@material-ui/icons/Brightness6Rounded";
 
-function MyProfile(props) {
-  const [myinfo, setMyinfo] = useState([]);
-  const [myCars, setMyCars] = useState([]);
+function MyProfile() {
+  const [myinfo] = useState([]);
+  const [myCars] = useState([]);
   const [newNdp, setNewNdp] = useState("");
   const [newName, setNewName] = useState("");
   const [newNum, setNewNum] = useState("");
@@ -31,31 +31,30 @@ function MyProfile(props) {
     history.push("/me/login");
   }
 
-  const getProfile = async () => {
-    try {
-      const response = await userServices.profil(userid);
-      setMyinfo(response.data.data[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getProfile = async () => {
+  //   try {
+  //     const response = await userServices.profil(userid);
+  //     setMyinfo(response.data.data[0]);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  const getVehicles = async () => {
-    try {
-      const response = await userServices.getAllMyCars(userid);
+  // const getVehicles = async () => {
+  //   try {
+  //     const response = await userServices.getAllMyCars(userid);
 
-      setMyCars(response.data.data);
-    } catch (error) {
-      setError(error);
-    }
-  };
+  //     setMyCars(response.data.data);
+  //   } catch (error) {
+  //     setError(error);
+  //   }
+  // };
 
   const addNew = async (e) => {
     const ndp = newNdp;
     e.preventDefault();
     try {
       await voitureService.addCar(ndp, userid);
-      getVehicles();
       setNewNdp("");
       setToggle(!toggle);
     } catch (error) {
@@ -71,7 +70,6 @@ function MyProfile(props) {
     e.preventDefault();
     try {
       await userServices.changeMyName(newName, userid);
-      getProfile();
       setNewName("");
       setNameToggle(!nameToggle);
     } catch (error) {
@@ -83,7 +81,6 @@ function MyProfile(props) {
     e.preventDefault();
     try {
       await userServices.changeMyNum(newNum, userid);
-      getProfile();
       setNewName("");
       setNumToggle(!numToggle);
     } catch (error) {
@@ -100,16 +97,10 @@ function MyProfile(props) {
     const id = e.currentTarget.id;
     try {
       await voitureService.deleteCar(id);
-      getVehicles();
     } catch (error) {
       setError(error);
     }
   };
-
-  useEffect(() => {
-    getProfile();
-    getVehicles();
-  }, [getProfile, getVehicles]);
 
   return (
     <section className="myprofile">

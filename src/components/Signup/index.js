@@ -7,28 +7,24 @@ import { useHistory } from "react-router-dom";
 //imgs
 import logosvg from "../../assets/imgs/logosvg.svg";
 
-function Signup(props) {
+function Signup() {
   const [nom, setNom] = useState("");
-  const [prenom, setPrenom] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [telephone, setTelephone] = useState("");
   const [error, setError] = useState("");
   const history = useHistory();
 
   const signup = async (e) => {
     const user = {
       nom: nom,
-      prenom: prenom,
       email: email,
       password: password,
-      telephone: telephone,
     };
     try {
       e.preventDefault();
       const response = await userServices.signup(user);
       if (response.status === 201) {
-       history.push("/me/login");
+        history.push("/me/login");
       }
     } catch (error) {
       setError(error.response.data.message);
@@ -41,7 +37,7 @@ function Signup(props) {
         <img src={logosvg} alt="logo" className="mainlogo" />
         <h2>Bienvenue sur AlertnGo</h2>
         {error === "" ? null : (
-          < Notification notif={error} unsetfunction={() => setError("")}/>
+          <Notification notif={error} unsetfunction={() => setError("")} />
         )}
       </div>
 
@@ -72,18 +68,6 @@ function Signup(props) {
         </label>
         <label>
           <p>
-            Prenom<span>*</span>
-          </p>
-          <input
-            onChange={(e) => setPrenom(e.target.value)}
-            type="text"
-            name="lastname"
-            placeholder="Prenom"
-            required
-          />
-        </label>
-        <label>
-          <p>
             Mot de passe<span>*</span>
           </p>
           <input
@@ -94,21 +78,8 @@ function Signup(props) {
             required
           />
         </label>
-        <label>
-          <p>
-            Numero de telephone<span>*</span>
-          </p>
-          <input
-            onChange={(e) => setTelephone(e.target.value)}
-            type="phone"
-            name="telephone"
-            placeholder="Telephone"
-            maxLength="13"
-            required
-          />
-        </label>
         <button className="submitbutton" type="submit">
-          Se Login
+        Créer un compte
         </button>
         <p>
           Veuillez remplir correctement les champs ci-dessus pour vous inscrire.
@@ -120,7 +91,6 @@ function Signup(props) {
         </Link>
       </form>
     </section>
-
   );
 }
 export default Signup;

@@ -7,13 +7,19 @@ function Header(props) {
       <div className="headerpc">
         <Link to="/">
           <div className="navbutton borderleft">
-            <p>Accueil</p>
+            <p>Alert</p>
           </div>
         </Link>
 
         <Link to="/">
           <div className="navbutton borderleft">
-            <p>Accueil</p>
+            <p>Spot</p>
+          </div>
+        </Link>
+
+        <Link to="/danger">
+          <div className="navbutton borderright">
+            <p>Danger</p>
           </div>
         </Link>
 

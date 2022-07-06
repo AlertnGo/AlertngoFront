@@ -14,10 +14,8 @@ import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 const Home = (props) => {
   const [ndp, setNdp] = useState("");
   const [userInfo, SetUserInfo] = useState("");
-  const [bigerror, setBigError] = useState("");
   const [notif, setNotif] = useState(false);
-  localStorage.setItem('Number', userInfo);
-
+  localStorage.setItem("Number", userInfo);
 
   const getCar = async (event) => {
     event.preventDefault();
@@ -34,7 +32,6 @@ const Home = (props) => {
           if (error) {
             SetUserInfo(undefined);
           }
-          setBigError(error);
         }
       }
     }
@@ -49,14 +46,19 @@ const Home = (props) => {
       <section>
         <form className="mainform">
           <label>
-            Entrez le numéro de plaque d'immatriculation pour trouver et alerter
-            le propriétaire
+            Saisissez le numéro de la plaque d'immatriculation pour trouver et
+            signaler une alerte ou pour envoyer un message.
+            
+            Si le message ne respecte pas notre politique, le message ne sera pas envoyé à
+            l'utilisateur. Faites donc attention lorsque vous envoyez un
+            message.
             <input
               className="searchBar"
               type="text"
               name="ndp"
               placeholder="AA000AA"
               maxLength="07"
+              autoComplete="off"
               onChange={(e) => {
                 setNdp(e.target.value);
               }}

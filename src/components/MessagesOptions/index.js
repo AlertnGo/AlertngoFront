@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { messagesServices } from "../../services";
 import "./style.scss";
-import {useHistory} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 //icons
 import SendRoundedIcon from "@material-ui/icons/SendRounded";
@@ -9,7 +9,7 @@ import SendRoundedIcon from "@material-ui/icons/SendRounded";
 function MessagesOptions(props) {
   const [messages, setMessages] = useState([]);
   const [mymessages, setMymessages] = useState("");
-  const [error, setError] = useState("");
+  const [setError] = useState("");
   const PhoneNumber = localStorage.getItem("Number");
   const history = useHistory();
   useEffect(() => {
@@ -24,7 +24,7 @@ function MessagesOptions(props) {
       }
     };
     getMessages();
-  }, []);
+  }, [setError]);
 
   const allmessages = document.querySelectorAll(".message p");
   allmessages.forEach((element) => {
