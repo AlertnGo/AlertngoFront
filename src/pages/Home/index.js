@@ -11,7 +11,7 @@ import NotFound from "../../components/NotFound";
 //icons
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 
-const Home = (props) => {
+const Home = () => {
   const [ndp, setNdp] = useState("");
   const [userInfo, SetUserInfo] = useState("");
   const [notif, setNotif] = useState(false);
@@ -47,9 +47,8 @@ const Home = (props) => {
         <form className="mainform">
           <label>
             Saisissez le numéro de la plaque d'immatriculation pour trouver et
-            signaler une alerte ou pour envoyer un message.
-            
-            Si le message ne respecte pas notre politique, le message ne sera pas envoyé à
+            signaler une alerte ou pour envoyer un message. Si le message ne
+            respecte pas notre politique, le message ne sera pas envoyé à
             l'utilisateur. Faites donc attention lorsque vous envoyez un
             message.
             <input

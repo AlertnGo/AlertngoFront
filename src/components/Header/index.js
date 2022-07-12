@@ -11,15 +11,15 @@ function Header(props) {
           </div>
         </Link>
 
-        <Link to="/">
+        <Link to="/spot">
           <div className="navbutton borderleft">
             <p>Spot</p>
           </div>
         </Link>
 
-        <Link to="/danger">
+        <Link to="/place">
           <div className="navbutton borderright">
-            <p>Danger</p>
+            <p>Place</p>
           </div>
         </Link>
 
